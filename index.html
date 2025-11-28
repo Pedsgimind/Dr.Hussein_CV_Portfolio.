@@ -2,589 +2,1187 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Mohammad Hussein – CV</title>
-
-  <style>
-    :root {
-      --primary: #0056a3;
-      --primary-light: #e6f0fb;
-      --accent: #0bb3a4;
-      --bg: #f4f6fb;
-      --text-main: #222;
-      --text-muted: #666;
-      --card-bg: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      background: var(--bg);
-      color: var(--text-main);
-      line-height: 1.6;
-    }
-
-    .page-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 16px 40px;
-    }
-
-    header {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    .photo-wrapper {
-      width: 120px;
-      height: 120px;
-      border-radius: 999px;
-      overflow: hidden;
-      border: 3px solid var(--primary-light);
-      background: #d9e2f2;
-      flex-shrink: 0;
-    }
-
-    .photo-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .title-block h1 {
-      margin: 0;
-      font-size: 28px;
-      color: var(--primary);
-    }
-
-    .title-block h2 {
-      margin: 6px 0 8px;
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--text-main);
-    }
-
-    .title-block p {
-      margin: 2px 0;
-      color: var(--text-muted);
-      font-size: 14px;
-    }
-
-    .tagline {
-      margin-top: 8px;
-      font-size: 14px;
-      color: var(--text-main);
-    }
-
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: var(--primary-light);
-      color: var(--primary);
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    /* Layout */
-    .layout {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 20px;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 900px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .photo-wrapper {
-        width: 100px;
-        height: 100px;
-      }
-    }
-
-    /* Cards / panels */
-    .card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 18px 20px;
-      box-shadow: 0 10px 25px rgba(15, 35, 95, 0.06);
-      margin-bottom: 16px;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      font-size: 16px;
-      color: var(--primary);
-    }
-
-    .card h4 {
-      margin: 10px 0 4px;
-      font-size: 14px;
-      color: var(--text-main);
-    }
-
-    .subtext {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    ul {
-      padding-left: 20px;
-      margin: 6px 0;
-      font-size: 14px;
-    }
-
-    li + li {
-      margin-top: 2px;
-    }
-
-    /* Sidebar */
-    .sidebar-section-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .contact-line {
-      font-size: 14px;
-      margin: 2px 0;
-    }
-
-    .contact-line a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    .contact-line a:hover {
-      text-decoration: underline;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-    }
-
-    .chip {
-      font-size: 12px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #f0f2fa;
-      color: var(--text-main);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--primary);
-      color: white;
-      text-decoration: none;
-      font-size: 13px;
-      font-weight: 500;
-      border: none;
-      cursor: pointer;
-      margin-top: 8px;
-    }
-
-    .btn.secondary {
-      background: var(--accent);
-      margin-left: 6px;
-    }
-
-    .btn:hover {
-      opacity: 0.92;
-    }
-
-    /* Main content */
-    .section {
-      margin-bottom: 18px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
-    }
-
-    .section-title {
-      font-size: 18px;
-      color: var(--primary);
-      margin: 0;
-    }
-
-    .section-tagline {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 6px;
-      margin-bottom: 2px;
-    }
-
-    .pill {
-      padding: 2px 8px;
-      border-radius: 999px;
-      background: #eef3ff;
-      font-size: 12px;
-    }
-
-    .item {
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .item strong {
-      color: var(--text-main);
-    }
-
-    .item-meta {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-  </style>
+  <title>Dr. Mohammad Hussein, MD, FRCPC – CV & Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Curriculum Vitae and professional portfolio of Dr. Mohammad Hussein, MD, FRCPC – Pediatric Gastroenterologist & Consultant." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="page-wrapper">
-    <!-- HEADER -->
-    <header>
-      <div class="photo-wrapper">
-        <!-- Replace profile.jpg with your actual photo filename -->
-        <img src="profile.jpg" alt="Dr. Mohammad Hussein portrait" />
-      </div>
+  <!-- ========= HEADER / HERO ========= -->
+  <header class="hero">
+    <div class="hero-inner container">
+      <div class="hero-main">
+        <div class="hero-photo">
+          <!-- Upload your photo as /images/profile.jpg -->
+          <img src="images/profile.jpg" alt="Dr. Mohammad Hussein portrait" />
+        </div>
+        <div class="hero-text">
+          <h1>Dr. Mohammad Hussein, MD, FRCPC (Canada)</h1>
+          <p class="hero-title">
+            Pediatric Gastroenterologist &amp; Consultant
+          </p>
+          <p class="hero-subtitle">
+            Royal College–certified Pediatrician | Advanced Pediatric GI, Hepatology &amp; Nutrition |
+            Evidence-based care across Canada, the Gulf region, and Iraq.
+          </p>
 
-      <div class="title-block">
-        <h1>Dr. Mohammad Hussein, MD, FRCPC</h1>
-        <h2>Pediatric Gastroenterologist & Consultant</h2>
-        <p>Royal College–certified Pediatrician | Advanced Pediatric GI, Hepatology & Nutrition</p>
+          <div class="hero-tags">
+            <span class="tag">Pediatric Gastroenterology</span>
+            <span class="tag">Endoscopy &amp; Colonoscopy</span>
+            <span class="tag">IBD &amp; Celiac Disease</span>
+            <span class="tag">Intestinal Failure &amp; Nutrition</span>
+          </div>
 
-        <p class="tagline">
-          Evidence-based care in pediatric gastroenterology, hepatology, nutrition, and therapeutic
-          endoscopy across Canada, the Gulf region, and Iraq.
-        </p>
-
-        <div class="badge-row">
-          <span class="badge">Pediatric Gastroenterology</span>
-          <span class="badge">Endoscopy & Colonoscopy</span>
-          <span class="badge">IBD & Celiac Disease</span>
-          <span class="badge">Intestinal Failure & Nutrition</span>
+          <div class="hero-actions">
+            <a href="#contact" class="btn primary">Contact &amp; Current Practice</a>
+            <a href="assets/MOHAMMAD-HUSSEIN-CV.pdf" class="btn ghost" target="_blank" rel="noopener">
+              Download CV (PDF)
+            </a>
+          </div>
         </div>
       </div>
-    </header>
 
-    <div class="layout">
-      <!-- SIDEBAR -->
-      <aside>
-        <div class="card">
-          <div class="sidebar-section-title">Contact</div>
-          <p class="contact-line"><strong>Hamilton, ON, Canada</strong></p>
-          <p class="contact-line">Tel (Canada): +1-226-700-2190</p>
-          <p class="contact-line">Tel (Saudi Arabia): +966-54-863-9217</p>
-          <p class="contact-line">Tel (Iraq): 772-173-8755</p>
-          <p class="contact-line">
+      <div class="hero-contact">
+        <h3>Primary Contact</h3>
+        <p>7 Turquoise Drive<br>Hamilton, ON L8W 4A4, Canada</p>
+        <p>
+          Tel (Canada): <a href="tel:+12267002190">+1-226-700-2190</a><br>
+          Tel (Saudi Arabia): <a href="tel:+966548639217">+966-54-863-9217</a>
+        </p>
+        <p>
+          Email:
+          <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a><br>
+          Website:
+          <a href="https://www.pedsgimind.ca" target="_blank" rel="noopener">www.pedsgimind.ca</a><br>
+          Online CV:
+          <a href="https://www.pedsgimind.ca/cv-portfolio/" target="_blank" rel="noopener">
+            www.pedsgimind.ca/cv-portfolio/
+          </a>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========= NAVIGATION ========= -->
+  <nav class="top-nav">
+    <div class="container nav-inner">
+      <div class="nav-title">CV Sections</div>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#practice">Practice Locations</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#skills">Clinical Skills</a></li>
+        <li><a href="#education">Education &amp; Certifications</a></li>
+        <li><a href="#experience">Professional Experience</a></li>
+        <li><a href="#development">Academic &amp; Development</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#conferences">Conferences</a></li>
+        <li><a href="#memberships">Memberships &amp; Leadership</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#mch-detail">MCH Qassim Practice</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container layout">
+      <!-- ========= LEFT COLUMN (MAIN CONTENT) ========= -->
+      <div class="layout-main">
+
+        <!-- ===== PRACTICE LOCATIONS & LANGUAGES ===== -->
+        <section id="practice" class="card-section">
+          <h2>Current &amp; Previous Practice Locations</h2>
+
+          <div class="card-grid">
+            <article class="card">
+              <h3>Current Practice Location</h3>
+              <h4>Al Farabi Gastroenterology &amp; Endoscopy Center</h4>
+              <ul>
+                <li>Pediatric Gastroenterologist Consultant</li>
+                <li>Diyala Health Ministry, Diyala, Iraq</li>
+                <li>Tel: <a href="tel:+9647721738755">772-173-8755</a></li>
+                <li>Email: <a href="mailto:Info@pedsgimind.ca">Info@pedsgimind.ca</a></li>
+                <li>
+                  Website:
+                  <a href="https://www.pedsgimind.ca/alfarabi" target="_blank" rel="noopener">
+                    www.pedsgimind.ca/alfarabi
+                  </a>
+                </li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Previous Practice Location</h3>
+              <h4>Maternity &amp; Children Hospital (MCH)</h4>
+              <ul>
+                <li>Pediatric Gastroenterology Consultant</li>
+                <li>Al Qassim Health Cluster, Ministry of Health</li>
+                <li>Kingdom of Saudi Arabia</li>
+                <li>Tel: 054-863-9217</li>
+                <li>Email: <a href="mailto:Mohuhussein@Moh.Gov.Sa">Mohuhussein@Moh.Gov.Sa</a></li>
+              </ul>
+            </article>
+
+            <article class="card">
+              <h3>Languages</h3>
+              <ul>
+                <li>Arabic – Fluent</li>
+                <li>English – Fluent</li>
+                <li>Turkish – Intermediate</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <!-- ===== PROFESSIONAL SUMMARY ===== -->
+        <section id="summary" class="card-section">
+          <h2>Professional Summary &amp; Career Narrative</h2>
+
+          <article class="card">
+            <p>
+              I am a Royal College–certified pediatrician and fellowship-trained in pediatric
+              Gastroenterology with a background in inflammatory bowel disease (IBD),
+              eosinophilic gastrointestinal disorders, pediatric motility and functional testing,
+              and complex nutrition, including enteral and parenteral support. Over the course of
+              my career, I have managed a broad spectrum of gastrointestinal and hepatobiliary
+              disorders in infants, children, and adolescents, while maintaining active involvement
+              in general and emergency pediatrics in tertiary, regional, and military healthcare
+              settings.
+            </p>
+            <p>
+              My subspecialty practice has been anchored in comprehensive, evidence-based pediatric
+              gastroenterology. This includes advanced diagnostic and interventional endoscopy
+              (upper and lower), PEG and PEC insertion, management of acute and chronic GI bleeding,
+              complex constipation and fecal incontinence, celiac disease, very early onset IBD,
+              intestinal lymphangiectasia, and post–liver transplant and pancreatitis care. I also
+              have experience with capsule endoscopy, pH–impedance monitoring, hydrogen/methane
+              breath testing, and anorectal manometry, allowing me to integrate motility and
+              functional testing into day-to-day clinical decision-making.
+            </p>
+            <p>
+              A major focus of my work has been the interface between gastrointestinal disease,
+              nutrition, and neurodevelopment. I have developed particular interest and experience
+              in feeding problems, selective and restrictive eating, obesity and metabolic risk,
+              and gastrointestinal manifestations of Autism Spectrum Disorder and other
+              neurodevelopmental conditions. I aim to deliver care that is not only technically and
+              diagnostically sound, but also family-centered and trauma-informed, recognizing the
+              impact of chronic GI symptoms on growth, development, schooling, and quality of life.
+            </p>
+            <p>
+              Teaching and systems-level work are important to my professional identity. I have
+              been actively involved in designing and delivering structured education for pediatric
+              residents and fellows, supervising case forums and journal clubs, leading
+              board-oriented teaching sessions, and developing innovative formats such as
+              podcast-based case learning. I have also led and supervised quality-improvement and
+              research projects.
+            </p>
+            <p>
+              I bring a strong and well-rounded background in pediatrics and pediatric
+              gastroenterology, with board certification in Pediatrics by the Royal College of
+              Physicians and Surgeons of Canada and LMCC (Licentiate of the Medical Council of
+              Canada) certification. My training and practice experiences across Canada, the Gulf
+              region, and Iraq, together with earlier work in military and academic environments in
+              Texas, have shaped a practice style that is collaborative, evidence-based, and highly
+              responsive to the needs of children with complex gastrointestinal and nutritional
+              disorders and their families.
+            </p>
+          </article>
+        </section>
+
+        <!-- ===== CLINICAL & PROCEDURAL SKILLS ===== -->
+        <section id="skills" class="card-section">
+          <h2>Clinical &amp; Procedural Skills</h2>
+
+          <article class="card">
+            <h3>Liver Biopsy</h3>
+            <ul>
+              <li>Certified in performing percutaneous liver biopsy.</li>
+              <li>Ultrasound-guided technique optimizing needle placement in real time.</li>
+              <li>
+                Experience with the Menghini needle (suction technique) and Tru-Cut needle
+                (spring-loaded automated core sampling).
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Video Capsule Endoscopy</h3>
+            <ul>
+              <li>
+                Certified by Yale New Haven Children’s Hospital, Connecticut, USA (June 2018).
+              </li>
+              <li>
+                Capable of performing the procedure, interpreting results, and treating
+                conditions accordingly.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Hydrogen and Methane Breath Testing</h3>
+            <ul>
+              <li>Skilled in conducting hydrogen and methane breath tests independently.</li>
+              <li>
+                Proficient in interpreting results and managing conditions based on findings.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>pH and Dual pH-Impedance Studies</h3>
+            <ul>
+              <li>Competent in performing these studies autonomously.</li>
+              <li>
+                Skilled in interpreting results, reporting findings, and implementing appropriate
+                treatment plans.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Anorectal Manometry</h3>
+            <ul>
+              <li>Proficient in conducting the procedure independently.</li>
+              <li>
+                Experienced in interpreting results, providing detailed reports, and managing
+                related conditions effectively.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Interventional Upper Endoscopy (EGD) Procedures</h3>
+            <ul>
+              <li>
+                Esophageal dilation: treatment of esophageal strictures due to various etiologies,
+                including esophageal atresia, achalasia, and gastroesophageal reflux disease
+                (GERD)–related strictures.
+              </li>
+              <li>
+                Foreign body removal: removal of ingested foreign bodies lodged in the esophagus,
+                stomach, or duodenum.
+              </li>
+              <li>
+                Percutaneous endoscopic gastrostomy (PEG) tube placement: placement of feeding
+                tubes directly into the stomach for long-term enteral nutrition.
+                <ul>
+                  <li>
+                    Implemented an endoscopic PEG program at Maternity and Children Hospital in
+                    Burayda, Saudi Arabia, transitioning away from open surgical gastrostomy to a
+                    less invasive approach that reduces complications and is completed in
+                    approximately 15 minutes.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Management of esophageal varices: band ligation or sclerotherapy for the treatment
+                of esophageal varices, often related to liver disease.
+              </li>
+              <li>
+                Treatment of bleeding lesions: hemostasis of bleeding ulcers and other lesions
+                using injection, clipping, or cautery.
+              </li>
+              <li>
+                Biopsy: tissue sampling from the esophagus, stomach, or duodenum for diagnosing
+                conditions such as celiac disease, eosinophilic esophagitis, or Helicobacter
+                pylori.
+              </li>
+              <li>Polypectomy: removal of polyps in the upper gastrointestinal tract.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Interventional Colonoscopy Procedures</h3>
+            <ul>
+              <li>
+                Polypectomy: removal of polyps in the colon, including in conditions such as
+                familial adenomatous polyposis and juvenile polyposis syndrome.
+              </li>
+              <li>
+                Biopsy: tissue sampling from the colon or terminal ileum for diagnosing
+                inflammatory bowel disease (IBD), celiac disease, infections, and other
+                pathology.
+              </li>
+              <li>
+                Stricture dilation: dilation of colonic strictures, including those secondary to
+                Crohn’s disease.
+              </li>
+              <li>
+                Management of lower GI bleeding: hemostasis for bleeding lesions in the colon,
+                using clipping, cautery, or injection therapy.
+              </li>
+              <li>Foreign body removal: retrieval of foreign objects from the colon or rectum.</li>
+              <li>
+                Percutaneous endoscopic cecostomy (PEC): placement of a cecostomy tube for the
+                management of severe constipation and fecal incontinence, enabling antegrade
+                colonic enemas to be administered directly into the colon.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== EDUCATION & CERTIFICATIONS ===== -->
+        <section id="education" class="card-section">
+          <h2>Education</h2>
+
+          <article class="card">
+            <ul>
+              <li>
+                <strong>BSc (Hons)</strong> – Diyala, Iraq<br />
+                <span class="meta">Sep 1991 – Jun 1994</span>
+              </li>
+              <li>
+                <strong>MBChB – Bachelor of Medicine and Bachelor of Surgery</strong><br />
+                Baghdad College of Medicine, University of Baghdad, Baghdad, Iraq<br />
+                <span class="meta">Sep 1995 – Jun 2002</span>
+              </li>
+            </ul>
+          </article>
+
+          <h2>Certifications</h2>
+          <article class="card">
+            <ul>
+              <li>Fellow American Academy of Pediatrics, FAAP, Oct 2016.</li>
+              <li>
+                Fellow of the Royal College of Physicians and Surgeons of Canada (FRCPC),
+                Pediatrics – Jun 2023.
+              </li>
+              <li>
+                Member Royal College of Paediatrics and Child Health, Final Certification Exam –
+                MRCPCH-UK Candidate.
+              </li>
+              <li>
+                Video Capsule Endoscopy Certification – Yale New Haven Children’s Hospital,
+                Connecticut, USA – Jun 2018.
+              </li>
+              <li>
+                Licentiate of the Medical Council of Canada (LMCC), MINC: CAMD-0078-9005, EICS
+                number: E283499.
+              </li>
+              <li>
+                Medical Council of Canada Qualifying Examination Part II – Hamilton, ON – May
+                2009.
+              </li>
+              <li>
+                Medical Council of Canada Qualifying Examination Part I – Hamilton, ON – Nov
+                2008.
+              </li>
+              <li>
+                Medical Council of Canada Evaluating Examination – Toronto, ON – Jan 2008.
+              </li>
+              <li>
+                IMG Program Assessment, CEHPEA-CE1 (currently NAC OSCE), Toronto, ON – Aug 2009.
+              </li>
+              <li>
+                Diploma, School of Aerospace Medicine – U.S. Air Force School of Aerospace
+                Medicine, Brooks Air Force Base, San Antonio, Texas, USA – Jun 2006 – Oct 2006.
+              </li>
+              <li>
+                Diploma, English Language – Defense Language Institute Foreign Language Center,
+                Lackland Air Force Base, San Antonio, Texas, USA – Jun 2006 – Oct 2006.
+              </li>
+            </ul>
+          </article>
+
+          <h3>Other Certifications</h3>
+          <article class="card">
+            <ul>
+              <li>
+                Liver Biopsy (2024): Certified in performing percutaneous liver biopsy using
+                ultrasound guidance, Menghini, and Tru-Cut needles.
+              </li>
+              <li>
+                Neonatal Resuscitation Program (NRP), University of Western Ontario, London, ON –
+                2010–2013.
+              </li>
+              <li>
+                Pediatric Advanced Life Support (PALS), University of Western Ontario, London, ON
+                – 2010–2013.
+              </li>
+              <li>
+                Advanced Pediatric Life Support (APLS), University of Western Ontario, London, ON
+                – 2010–2013.
+              </li>
+              <li>Advanced Cardiac Life Support (ACLS) – CEHPEA, Toronto, ON – May 2010.</li>
+              <li>
+                Orientation to the Canadian Health Care System, Culture, and Context for
+                International Pharmacists – Leslie Dan Faculty of Pharmacy, Toronto, ON – Jan
+                2009 – Mar 2009.
+              </li>
+              <li>
+                Crucial Conversations Teamwork and Communication Training Program – Schulich
+                School of Medicine &amp; Dentistry, University of Western Ontario – Mar 2011.
+              </li>
+              <li>
+                Research Certificate: Clinical Trial Methodology in Practice – Michael G.
+                DeGroote School of Medicine, McMaster University, Hamilton, ON – Apr 2009 – Dec
+                2009.
+              </li>
+              <li>
+                Research Certificate: Fundamentals of Health Research &amp; Evaluation – Michael
+                G. DeGroote School of Medicine, McMaster University, Hamilton, ON – Apr 2009 –
+                Dec 2009.
+              </li>
+              <li>
+                Research Certificate: Methodology of Clinical Trial Research Coordination –
+                Michael G. DeGroote School of Medicine, McMaster University, Hamilton, ON – Apr
+                2009 – Dec 2009.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== PROFESSIONAL EXPERIENCE ===== -->
+        <section id="experience" class="card-section">
+          <h2>Professional Experience</h2>
+
+          <article class="card">
+            <h3>Al Farabi Gastroenterology &amp; Endoscopy Center</h3>
+            <p><strong>Pediatric Gastroenterologist Consultant</strong><br>
+              Diyala Health Ministry, Diyala, Iraq<br>
+              <span class="meta">Apr 2025 – Present</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Maternity &amp; Children Hospital, Buraydah – Al Qassim Health Cluster</h3>
+            <p><strong>Pediatric Gastroenterology Consultant</strong><br>
+              Ministry of Health, Kingdom of Saudi Arabia (KSA)<br>
+              <span class="meta">Feb 2024 – Feb 2025</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Ibn Sina Pediatric Gastroenterology Clinic, Baghdad, Iraq</h3>
+            <p><strong>Pediatric Gastroenterology Consultant</strong><br>
+              Al Maghrib Street, Al Adhamyia, Baghdad, Iraq<br>
+              <span class="meta">Apr 2022 – Jan 2024</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Seashell Medical Centre, Milton, Ontario, Canada</h3>
+            <p>
+              <strong>Pediatrician &amp; Pediatric Gastroenterology, Hepatology, and Clinical Nutrition</strong><br>
+              330 Bronte Street South, Milton, ON L9T 8T2<br>
+              <span class="meta">Aug 2016 – Mar 2022</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Oakville Pediatric Gastroenterology Clinic, Oakville, Ontario, Canada</h3>
+            <p>
+              <strong>Pediatrician and Pediatric Gastroenterologist</strong><br>
+              455 Trafalgar Rd., Oakville, ON<br>
+              <span class="meta">Mar 2016 – Aug 2016</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Children’s Hospital, McMaster University</h3>
+            <p>
+              <strong>Gastroenterology, Hepatology, and Nutrition Fellow</strong><br>
+              1280 Main Street West, Hamilton, ON L8S 4K1<br>
+              <span class="meta">Jul 2013 – Dec 2015</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Children’s Hospital, Western University, London, Ontario</h3>
+            <p>
+              <strong>Pediatric Resident</strong><br>
+              London Health Sciences Centre<br>
+              <span class="meta">Jul 2010 – Jun 2013</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Canadian Chiropractic Examining Board (CCEB)</h3>
+            <p>
+              <strong>Simulated Patient / Simulated Health Care Professional</strong><br>
+              1209 59 Ave SE, Calgary, AB T2H 2M3<br>
+              <span class="meta">Nov 2008 – May 2010</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Pharmacy Examining Board of Canada (PEBC)</h3>
+            <p>
+              <strong>Simulated Patient / Simulated Health Care Professional</strong><br>
+              717 Church Street, Toronto, ON M4W 2M4<br>
+              <span class="meta">Nov 2009 – May 2010</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Aerospace &amp; Naval Medicine Department, Iraqi Surgeon General</h3>
+            <p>
+              <strong>Deputy Chief</strong><br>
+              Green International Zone, Baghdad, Iraq<br>
+              <span class="meta">Mar 2006 – Oct 2006</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>School of Aerospace Medicine, Brooks Air Force Base</h3>
+            <p>
+              <strong>Iraqi Air Force Liaison</strong><br>
+              San Antonio, Texas, USA<br>
+              <span class="meta">Jun 2006 – Oct 2006</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>New Al-Muthana Aerospace Clinic, Aerospace and Naval Medicine Department</h3>
+            <p>
+              <strong>Commander</strong><br>
+              Baghdad International Airport, Iraqi Air Force Camp<br>
+              <span class="meta">Mar 2006 – Jun 2006</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Ministry of Health, Office of Special Operation, Baghdad, Iraq</h3>
+            <p>
+              <strong>Senior Registrar Medical Doctor</strong><br>
+              <span class="meta">Jan 2005 – Feb 2005</span>
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Rusafa Medical Directorate, Ministry of Health, Baghdad, Iraq</h3>
+            <p>
+              <strong>Rotating Medical Intern / Chief Resident</strong><br>
+              <span class="meta">Oct 2002 – Feb 2005</span>
+            </p>
+          </article>
+        </section>
+
+        <!-- ===== PROFESSIONAL DEVELOPMENT & ACADEMIC ===== -->
+        <section id="development" class="card-section">
+          <h2>Professional Development &amp; Academic Activities</h2>
+
+          <article class="card">
+            <h3>2002–2005 – Early Clinical &amp; Academic Activities (Iraq)</h3>
+            <p><strong>Rusafa Health Centre, Ministry of Health, Baghdad, Iraq:</strong></p>
+            <ul>
+              <li>Type 1 Diabetes Mellitus – clinical review, Ibn Baladi Hospital.</li>
+              <li>Neonatal Sepsis – local incidence rate study, Ibn Baladi Hospital.</li>
+              <li>
+                Epstein–Barr Virus (EBV) – case presentation and literature review,
+                Al-Jwader Hospital.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2005–2006 – Aerospace Medicine &amp; Military-Related Academic Work (USA)</h3>
+            <p><strong>Defense Language Institute / School of Aerospace Medicine, San Antonio, Texas:</strong></p>
+            <ul>
+              <li>Alcohol and the Military Aviator.</li>
+              <li>
+                New Iraqi Aerospace Medicine – From Old to New Formulation and Transition:
+                Successes and Limitations.
+              </li>
+              <li>Medications and the Military Aviator.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2009 – Research &amp; Academic Skills (McMaster University)</h3>
+            <p><strong>Michael G. DeGroote School of Medicine, McMaster University, Hamilton, ON:</strong></p>
+            <ul>
+              <li>
+                Ultrasound Use in Simple Sacral Dimple – literature search and study design
+                (HRM-721 proposed research project).
+              </li>
+              <li>
+                Conflict of Interest in Clinical Trials – Tri-Council Policy Statement (TCPS,
+                Chapter 7).
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>2010–2013 – Pediatric Academic Rounds (Western University)</h3>
+            <h4>2010 – London Health Sciences Centre, University of Western Ontario:</h4>
+            <ul>
+              <li>Syncope in Children – May 2010.</li>
+              <li>Hematuria in Children – case presentation and literature review, Aug 2010.</li>
+              <li>
+                Increased Energy Intake for Preterm Infants with or Developing Bronchopulmonary
+                Dysplasia / Chronic Lung Disease (Lai NM, 2011) – Sep 2010.
+              </li>
+              <li>Neonatal Intraventricular Hemorrhage – Sep 2010.</li>
+              <li>
+                Resuscitation of Newborn Infants with 21% or 100% Oxygen – review and
+                meta-analysis (Ola Didrik Saugstad, 2008) – Oct 2010.
+              </li>
+            </ul>
+
+            <h4>2011 – London Health Sciences Centre, University of Western Ontario:</h4>
+            <ul>
+              <li>
+                Transfusion of Leukocyte-Depleted Red Blood Cells Is Not a Risk Factor for New
+                Onset or Progressive Multiple Organ Dysfunction in Critically Ill Children
+                (Judith vanderWal, 2011) – Oct 2011.
+              </li>
+            </ul>
+
+            <h4>2012 – London Health Sciences Centre, University of Western Ontario:</h4>
+            <ul>
+              <li>
+                Guideline for the Evaluation of Cholestatic Jaundice in Infants – Recommendations
+                of NASPGHAN – Feb 2012.
+              </li>
+            </ul>
+
+            <h4>2013 – Hamilton Health Sciences, McMaster University:</h4>
+            <ul>
+              <li>
+                Segmental Intestinal Lymphangiectasia – rare case presentation with literature
+                review – Aug 2013.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== AWARDS & ACHIEVEMENTS ===== -->
+        <section id="awards" class="card-section">
+          <h2>Awards &amp; Achievements</h2>
+
+          <article class="card">
+            <ul>
+              <li>
+                2003–2004: Distinguished Physician Award, Ibn Baladi Hospital, Baghdad, Iraq.
+              </li>
+              <li>
+                2003–2004: Recipient of Best Doctor of the Year, Ibn Baladi Hospital.
+              </li>
+              <li>
+                Played a managerial role in keeping the hospital operational during the 2003 war
+                with only 3 physicians, few healthcare professionals, and scarce resources.
+              </li>
+              <li>
+                2013: Best Teacher Award, University of Western Ontario, London, ON, Canada.
+                <ul>
+                  <li>Established the curriculum for “Residents as Teachers of Publics (RAT).”</li>
+                </ul>
+              </li>
+              <li>
+                2011–2013: Educator / Teacher, Medical Students Teaching Series, Clinical Teaching
+                Units, University of Western Ontario, London, ON.
+              </li>
+              <li>
+                2012: Pre-Clerkship (Year II) Clinical Skills Mentor – Clinical Skills Building,
+                University of Western Ontario, Jul 2012.
+              </li>
+              <li>
+                2008–2010: Established the curriculum for an International Medical Graduates
+                bridging program, Partner Performance and Associate Organization, Hamilton, ON.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== CONFERENCES ===== -->
+        <section id="conferences" class="card-section">
+          <h2>Conferences (Major Meetings)</h2>
+
+          <article class="card">
+            <ul>
+              <li>
+                Jan 2015:
+                <ul>
+                  <li>Advanced Endoscopy Course, Hamilton General Hospital.</li>
+                  <li>
+                    Seventh Canadian GI Fellows Program in IBD, Grand Hotel and Suites, Toronto,
+                    ON.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Feb 27 – Mar 2, 2015:
+                <ul>
+                  <li>
+                    Canadian Digestive Diseases Week (CDDW) and the Annual CASL Winter Meeting –
+                    Fairmont Banff Springs, Banff, Alberta.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Feb 2014:
+                <ul>
+                  <li>
+                    Canadian Digestive Diseases Week and the Annual CASL Winter Meeting – Toronto,
+                    ON.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Jan – Dec 2014 (McMaster Children’s Hospital, McMaster University, Hamilton, ON):
+                <ul>
+                  <li>Pediatric Gastroenterology Pathology Rounds.</li>
+                  <li>Pediatric Gastroenterology Rounds.</li>
+                  <li>Pediatric Gastroenterology Radiology Rounds.</li>
+                </ul>
+              </li>
+              <li>
+                Oct 2014:
+                <ul>
+                  <li>
+                    High-Resolution Manometry – Esophageal Function, St. Joseph’s Healthcare (SJH),
+                    Hamilton, ON.
+                  </li>
+                  <li>
+                    Very Early Onset Inflammatory Bowel Disease – Hospital for Sick Children,
+                    Toronto, ON.
+                  </li>
+                </ul>
+              </li>
+              <li>Steinberg’s 2014 Board Review in Gastroenterology, Arlington, VA, USA.</li>
+              <li>
+                Translational Approaches to Inflammatory Liver Injury – University of Calgary,
+                Liver Unit, Calgary, Alberta.
+              </li>
+              <li>
+                Aug 2014:
+                <ul>
+                  <li>
+                    Mount Sinai Intensive Review in Gastroenterology &amp; Hepatology, Icahn School
+                    of Medicine at Mount Sinai, New York, NY, USA.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Aug 2014:
+                <ul>
+                  <li>
+                    20th Annual Pediatric Board Review, Cleveland Clinic Educational Foundation,
+                    Cleveland, Ohio, USA.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Jul 31 – Aug 2013:
+                <ul>
+                  <li>
+                    Boston MedStudy Intensive Pediatric Board Review, Boston, Texas, USA.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Feb 2013, 2014, 2015, 2016, 2018, 2022:
+                <ul>
+                  <li>McMaster Intensive Pediatric Board Review, Hamilton, ON.</li>
+                </ul>
+              </li>
+              <li>
+                NASPGHAN Annual Meeting &amp; Postgraduate Course:
+                <ul>
+                  <li>2013, 2014, 2015, 2017, 2022, 2023.</li>
+                </ul>
+              </li>
+              <li>
+                Canadian Pediatric Society Conference:
+                <ul>
+                  <li>2012, 2013, 2015, 2017, 2023.</li>
+                </ul>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== MEMBERSHIPS & LEADERSHIP ===== -->
+        <section id="memberships" class="card-section">
+          <h2>Affiliations &amp; Professional Memberships</h2>
+
+          <article class="card">
+            <ul>
+              <li>2024–Present: [membership line as in your source text].</li>
+              <li>Canadian Medical Association, Member, 2013–present.</li>
+              <li>Canadian Association of Gastroenterology, Member, 2013–present.</li>
+              <li>
+                North American Society for Pediatric Gastroenterology, Hepatology and Nutrition
+                (NASPGHAN), Member, 2013–present.
+              </li>
+              <li>
+                Iraqi Medical Association of North America (online group), Founder, 2012–present.
+              </li>
+              <li>
+                Residents Wellbeing Committee, Member – Pediatric Residency Program, University of
+                Western Ontario, London – 2011–2013.
+              </li>
+              <li>
+                Residents as Teachers of Public Committee, Core Leader – Pediatric Residency
+                Program, UWO, 2011–2013.
+              </li>
+              <li>Ontario Medical Association, Member, 2010–present.</li>
+              <li>Canadian Pediatric Society, Member, 2010–present.</li>
+              <li>American Academy of Pediatrics, Member, 2010–present.</li>
+              <li>Canadian Medical Protective Association, Member, 2010–present.</li>
+              <li>Canadian Iraqi Medical Society, Member, 2010–present.</li>
+              <li>
+                Settlement and Integration Services Organization, Member, Hamilton, ON –
+                2008–2012.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Aerospace &amp; Hospital-Based Leadership and Committee Roles</h3>
+            <p><strong>Aerospace and Naval Medicine Division, Iraqi Surgeon General, Ministry of Defense, Baghdad, Green International Zone, Iraq</strong></p>
+            <ul>
+              <li>Division Deputy Chief, 2005–2006.</li>
+              <li>Committee Chief: Pilots and Aircrews Selection – 2005–2006.</li>
+              <li>Clinic Chief, Al-Muthana Air Base – 2005–2006.</li>
+              <li>Committee Chief: Food Safety Inspection – 2005–2006.</li>
+              <li>Committee Chief: Public Health Committee – 2005–2006.</li>
+            </ul>
+
+            <p><strong>Ibn Al-Balady Hospital, Baghdad, Iraq:</strong></p>
+            <ul>
+              <li>Salary Distribution Committee, Member – 2003–2005.</li>
+              <li>Food Safety Inspection Committee, Member – 2003–2005.</li>
+              <li>Iraqi Medical Union of Excellent Employees, Member – 2003–2005.</li>
+              <li>Chief Resident – 2003–2005.</li>
+              <li>Pediatrics Hospital Medical Director – 2003–2004.</li>
+            </ul>
+
+            <p><strong>Other Academic / Professional Roles:</strong></p>
+            <ul>
+              <li>Iraqi Medical Association, Member – 2003–present.</li>
+              <li>
+                Pediatrics CaRMS Interview Committee, Member – University of Western Ontario,
+                London, ON – 2011–2012.
+              </li>
+              <li>
+                Delegate, American Academy of Pediatrics, Pediatrics Program, UWO, London, ON –
+                2011–2012.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== PUBLICATIONS & ABSTRACTS ===== -->
+        <section id="publications" class="card-section">
+          <h2>Lifetime Publications &amp; Abstract Presentations</h2>
+
+          <article class="card">
+            <ul>
+              <li>
+                <strong>Regional Analysis of Magnetic Ingestion in Children: Insights from Al-Qassim, Saudi Arabia</strong><br>
+                Retrospective study, 2024 – ongoing.
+              </li>
+              <li>
+                <strong>Ulcerative Colitis and Budd–Chiari Syndrome Association in a Child</strong><br>
+                Submitted to Saudi Journal of Gastroenterology, 2024.
+              </li>
+              <li>
+                <strong>Is It Really Leukemia?</strong><br>
+                Case report and literature review, University of Western Ontario, London, ON –
+                accepted in Canadian Journal of Clinical Nutrition, 2013.
+              </li>
+              <li>
+                <strong>Tuberculous Abdominal Cocoon in a Twelve-Year-Old Girl</strong><br>
+                Case report and literature review, University of Western Ontario, London, ON –
+                published in The Lancet Infectious Diseases, 2015.
+              </li>
+              <li>
+                <strong>Pediatric Inflammatory Bowel Disease Activity and Fecal Calprotectin (FCal)</strong><br>
+                McMaster University, Hamilton, ON – presented at Canadian Digestive Diseases Week
+                (CDDW), 2015.
+              </li>
+              <li>
+                <strong>Congenital Myotonic Dystrophy and Chylothorax – Common Disease, Rarely Reported Association</strong><br>
+                University of Western Ontario, London, ON – accepted in Pediatrics, 2013.
+              </li>
+              <li>
+                <strong>Dieulafoy’s Lesion – Rare and Recalcitrant Cause of Upper Gastrointestinal Bleeding</strong><br>
+                McMaster University, Hamilton, ON – presented at CDDW, 2014.
+              </li>
+              <li>
+                <strong>Pediatric Duodenal Dieulafoy’s Lesion – A Serious but Rare Cause of Upper GI Bleeding</strong><br>
+                Published in Journal of Clinical Gastroenterology and Hepatology, November 9,
+                2017.
+              </li>
+              <li>
+                <strong>Pediatric Segmental Intestinal Lymphangiectasia</strong><br>
+                Case report and literature review – published in Journal of Pediatric
+                Gastroenterology and Nutrition, 2018.
+              </li>
+              <li>
+                <strong>Worsening Headaches After a Concussion: Expected or Unusual?</strong><br>
+                Case report of newly diagnosed hydrocephalus post-concussion and literature
+                review – submitted to Canadian Medical Association Journal, 2014.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== DETAILED PRACTICE DESCRIPTION – MCH QASSIM ===== -->
+        <section id="mch-detail" class="card-section">
+          <h2>Detailed Practice Description – MCH, Qassim Cluster, KSA</h2>
+
+          <article class="card">
+            <p><strong>March 2022 – Present</strong></p>
+            <p>
+              In Early 2024, I joined Maternity and Children Hospital (MCH), part of the Al Qassim
+              Health Cluster, as a Pediatric Gastroenterology Consultant while also covering
+              general pediatrics, emergency pediatrics, and NICU several days a week. Since then,
+              I have managed a comprehensive clinical and academic schedule.
+            </p>
+
+            <h3>Clinical Activities</h3>
+            <h4>Outpatient Clinics</h4>
+            <ol>
+              <li>
+                Every Monday:
+                <ul>
+                  <li>Morning clinic: 7:00 am – 12:00 pm (in-person).</li>
+                  <li>Night clinic: 5:00 pm – 9:00 pm (in-person).</li>
+                </ul>
+              </li>
+              <li>
+                Every Sunday and Thursday:
+                <ul>
+                  <li>Virtual clinics: 8:00 am – 12:00 pm.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h4>Endoscopy</h4>
+            <ol>
+              <li>
+                Every Tuesday:
+                <ul>
+                  <li>Endoscopy list: 7:00 am – 12:00 pm.</li>
+                </ul>
+              </li>
+            </ol>
+
+            <h4>Daycare Clinic for Infusion Therapy</h4>
+            <ol>
+              <li>Every Monday and Wednesday: 7:00 am – 2:00 pm (in-person).</li>
+              <li>
+                Administering biologic IBD medications (infliximab, adalimumab, vedolizumab, etc.)
+                and elemental iron infusions as part of ongoing patient care.
+              </li>
+            </ol>
+
+            <h3>Teaching Activities</h3>
+            <h4>(1) Noon Case-Based Teaching Sessions</h4>
+            <p>Regularly conducted sessions on:</p>
+            <ul>
+              <li>Approach to chronic diarrhea and malabsorption.</li>
+              <li>Case-based discussions (e.g., “Puking Child” – cyclic vomiting syndrome).</li>
+              <li>Approach to the “yellow baby” (neonatal cholestasis).</li>
+            </ul>
+
+            <h4>(2) Half-Day Activities</h4>
+            <ul>
+              <li>GI bleeding lecture – Apr 17, 2024.</li>
+              <li>GI MCQ session – May 8, 2024.</li>
+            </ul>
+
+            <h4>(3) Qassim Peds Podcast Group</h4>
+            <ul>
+              <li>
+                Established, scripted, supervised, and created the “Qassim Peds Podcast Group” for
+                residents, registrars, consultants, interns, and medical students.
+              </li>
+              <li>Provides structured case-based learning and discussion.</li>
+            </ul>
+
+            <h3>Sessions Conducted (Examples)</h3>
+            <ul>
+              <li>Oct 19, 2024 – Approach to the Yellow Baby.</li>
+              <li>
+                Oct 22, 2024 – Approach to Chronic Diarrhea and Malabsorption Syndromes.
+              </li>
+              <li>
+                Oct 27, 2024 (Sunday) – Approach to the Puking Child – case-based discussion on
+                cyclic vomiting syndrome (CVS).
+              </li>
+            </ul>
+
+            <h3>Case Forums Supervision – Saudi Pediatric Board Residents</h3>
+            <p>Supervision of formal case forums:</p>
+            <ol>
+              <li>
+                Apr 17, 2024 – supervised Dr. Khalifah. Case discussed: magnet ingestion and button
+                battery in the esophagus requiring urgent endoscopic removal.
+              </li>
+              <li>
+                Apr 22, 2024 – supervised Dr. Khalid Alanazi. Case discussed: tracheoesophageal
+                fistula (TEF) secondary to button battery ingestion.
+              </li>
+              <li>
+                May 6, 2024 – supervised Dr. Abdulrahman Alharbi. Case discussed: lower
+                gastrointestinal bleeding and juvenile polyposis syndromes.
+              </li>
+              <li>
+                May 13, 2024 – supervised Dr. Mishaal Alqahtani. Case discussed: primary
+                intestinal lymphangiectasia and cardiac hepatopathy in a child.
+              </li>
+              <li>
+                Jul 29, 2024 – supervised Dr. Abeer Aldakhil. Case discussed: post–liver
+                transplant follow-up and acute pancreatitis care.
+              </li>
+              <li>
+                Aug 27, 2024 – supervised Dr. Abdulrahman Alsaykhan. Case discussed: cholestasis
+                and indirect hyperbilirubinemia in infancy.
+              </li>
+              <li>
+                Sep 4, 2024 – supervised Dr. Muhammad Albisher. Case discussed: percutaneous
+                endoscopic gastrostomy (PEG) tube – pre-procedure assessment, intra-procedural
+                issues, and post-procedure care.
+              </li>
+              <li>
+                Sep 16, 2024 – supervised Dr. Ali Alharbi. Case discussed: sexual abuse presenting
+                as chronic functional abdominal pain and constipation.
+              </li>
+              <li>
+                Sep 17, 2024 – supervised Dr. Ghadeer Almutruk. Case discussed: approach to
+                refractory constipation in children.
+              </li>
+              <li>
+                Sep 25, 2024 – supervised Dr. Saif Alshammri. Case discussed: celiac disease –
+                diagnostic approach and current NASPGHAN / ESPGHAN guidelines (endoscopy vs
+                non-biopsy strategy).
+              </li>
+              <li>
+                Oct 1, 2024 – supervised Dr. Muhammad Albisher. Case discussed: post-Kasai care
+                and ERCP for choledocholithiasis in pediatrics.
+              </li>
+              <li>
+                Nov 19, 2024 – supervised Dr. Salem Alkhalaf. Case discussed: peptic ulcer disease
+                in a child – full diagnostic and management approach.
+              </li>
+            </ol>
+
+            <h3>Research Activities (MCH, Qassim)</h3>
+            <p>Supervising three ongoing retrospective studies:</p>
+            <ol>
+              <li>
+                Use of unnecessary laboratory and imaging studies at MCH (2019–2024) with the goal
+                of establishing a Saudi “Choosing Wisely” program.
+              </li>
+              <li>
+                Incidence and prevalence of iatrogenic hyponatremia in admitted children at MCH,
+                aiming to establish local guidelines aligned with Canadian Pediatric Society
+                recommendations.
+              </li>
+              <li>
+                A Regional Analysis of Magnetic Ingestion in Children – insights from Al-Qassim,
+                Saudi Arabia (ongoing, 2024).
+              </li>
+            </ol>
+
+            <h3>Community Involvement</h3>
+            <ul>
+              <li>
+                Participation in Rukin Hayakum, a public educational initiative at MCH, aimed at
+                educating patients and families.
+              </li>
+              <li>
+                Occasional involvement in local and national teaching forums, contributing to the
+                education of peers and the public.
+              </li>
+              <li>
+                Member of Qassim local chapter for Saudi Society of Pediatric Gastroenterology
+                Hepatology and Nutrition (SASPGHAN) Feb 2024–Present.
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- ===== REFERENCES ===== -->
+        <section id="references" class="card-section">
+          <h2>References</h2>
+          <article class="card">
+            <p>
+              Detailed list of references and/or reference letters will be provided upon request.
+            </p>
+          </article>
+        </section>
+      </div>
+
+      <!-- ========= RIGHT COLUMN (SIDEBAR CONTACT SUMMARY) ========= -->
+      <aside id="contact" class="layout-side">
+        <section class="card sticky">
+          <h2>Contact &amp; Practice Summary</h2>
+          <h3>Primary Contact</h3>
+          <p>
+            7 Turquoise Drive<br />
+            Hamilton, ON L8W 4A4, Canada
+          </p>
+          <p>
+            Tel (Canada): <a href="tel:+12267002190">+1-226-700-2190</a><br />
+            Tel (Saudi Arabia): <a href="tel:+966548639217">+966-54-863-9217</a>
+          </p>
+          <p>
             Email:
-            <a href="mailto:Mohammad.Hussein@pedsgimind.ca">
-              Mohammad.Hussein@pedsgimind.ca
+            <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a>
+          </p>
+          <p>
+            Website:
+            <a href="https://www.pedsgimind.ca" target="_blank" rel="noopener">
+              www.pedsgimind.ca
             </a>
           </p>
-          <p class="contact-line">
-            Website:
-            <a href="https://www.pedsgimind.ca" target="_blank">www.pedsgimind.ca</a>
-          </p>
 
-          <a class="btn" href="Dr-Mohammad-Hussein-CV.pdf" target="_blank">
-            Download PDF CV
-          </a>
-        </div>
-
-        <div class="card">
-          <div class="sidebar-section-title">Current Practice</div>
-          <p class="item">
+          <h3>Current Practice</h3>
+          <p>
             <strong>Al Farabi Gastroenterology &amp; Endoscopy Center</strong><br />
             Pediatric Gastroenterologist Consultant<br />
-            Diyala Health Ministry, Diyala, Iraq
+            Diyala Health Ministry, Diyala, Iraq<br />
+            Tel: <a href="tel:+9647721738755">772-173-8755</a><br />
+            Email:
+            <a href="mailto:Info@pedsgimind.ca">Info@pedsgimind.ca</a>
           </p>
-          <p class="item-meta">
-            Tel: 772-173-8755<br />
-            Website: <a href="https://pedsgimind.github.io/alfarabi/" target="_blank">
-              pedsgimind.github.io/alfarabi
-            </a>
-          </p>
-        </div>
 
-        <div class="card">
-          <div class="sidebar-section-title">Languages</div>
-          <div class="chip-row">
-            <span class="chip">Arabic – Fluent</span>
-            <span class="chip">English – Fluent</span>
-            <span class="chip">Turkish – Intermediate</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="sidebar-section-title">Key Skills</div>
-          <ul>
-            <li>Advanced diagnostic & interventional endoscopy</li>
-            <li>PEG / PEC insertion programs</li>
-            <li>Capsule endoscopy, pH-impedance, breath testing</li>
-            <li>Anorectal manometry, motility & functional testing</li>
-            <li>Complex nutrition – enteral & parenteral support</li>
-            <li>Pediatric liver disease & post–transplant care</li>
-          </ul>
-        </div>
+          <a href="mailto:Mohammad.Hussein@pedsgimind.ca" class="btn primary full">
+            Email Dr. Hussein
+          </a>
+        </section>
       </aside>
-
-      <!-- MAIN CONTENT -->
-      <main>
-        <!-- SUMMARY -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Professional Summary</h3>
-          </div>
-          <div class="card">
-            <p>
-              Royal College–certified pediatrician and fellowship-trained Pediatric Gastroenterologist
-              with extensive experience managing complex gastrointestinal, hepatobiliary, and nutritional
-              disorders in infants, children, and adolescents. Practice anchored in evidence-based care,
-              advanced endoscopy, and the integration of motility and functional testing into routine
-              clinical decision-making. Particular interest in the interface between GI disease, nutrition,
-              and neurodevelopment, including feeding difficulties, restrictive eating, and GI
-              manifestations of Autism Spectrum Disorder and other neurodevelopmental conditions.
-            </p>
-            <p>
-              Committed medical educator, regularly involved in resident and fellow teaching, board exam–
-              oriented education, case forums, and podcast-based learning initiatives. Experience spans
-              tertiary academic centers, regional hospitals, private practice, and military medicine settings
-              across Canada, Iraq, Saudi Arabia, and the United States.
-            </p>
-          </div>
-        </section>
-
-        <!-- CLINICAL & PROCEDURAL -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Clinical & Procedural Expertise</h3>
-            <span class="section-tagline">Selected highlights</span>
-          </div>
-          <div class="card">
-            <div class="item">
-              <strong>Liver Biopsy</strong>
-              <div class="item-meta">
-                Certified in ultrasound-guided percutaneous liver biopsy using Menghini and Tru-Cut
-                needles.
-              </div>
-            </div>
-
-            <div class="item">
-              <strong>Video Capsule Endoscopy</strong>
-              <div class="item-meta">
-                Certified at Yale New Haven Children’s Hospital (2018); performance, interpretation and
-                integration into clinical care.
-              </div>
-            </div>
-
-            <div class="item">
-              <strong>Functional & Motility Testing</strong>
-              <div class="item-meta">
-                Hydrogen / methane breath testing, pH and dual pH-impedance studies, and anorectal
-                manometry – independently performed, interpreted, and reported.
-              </div>
-            </div>
-
-            <div class="item">
-              <strong>Interventional Upper Endoscopy (EGD)</strong>
-              <ul>
-                <li>Esophageal dilation for strictures (atresia, achalasia, GERD-related).</li>
-                <li>Foreign body removal (esophagus, stomach, duodenum).</li>
-                <li>PEG placement and PEG program implementation.</li>
-                <li>Variceal band ligation / sclerotherapy and hemostasis of bleeding lesions.</li>
-                <li>Biopsy and polypectomy for diagnostic and therapeutic purposes.</li>
-              </ul>
-            </div>
-
-            <div class="item">
-              <strong>Interventional Colonoscopy</strong>
-              <ul>
-                <li>Polypectomy and biopsy (IBD, polyposis, infections).</li>
-                <li>Stricture dilation, bleeding control, foreign body removal.</li>
-                <li>Percutaneous endoscopic cecostomy (PEC) for severe constipation and fecal incontinence.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <!-- EDUCATION & CERTIFICATIONS -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Education & Certifications</h3>
-          </div>
-          <div class="card">
-            <h4>Education</h4>
-            <ul>
-              <li><strong>MBChB – Medicine & Surgery</strong>, Baghdad College of Medicine, University of Baghdad.</li>
-              <li><strong>BSc (Hons)</strong>, Diyala, Iraq.</li>
-            </ul>
-
-            <h4>Key Certifications</h4>
-            <ul>
-              <li>Fellow of the Royal College of Physicians and Surgeons of Canada (FRCPC), Pediatrics.</li>
-              <li>Royal College–certified Pediatric Gastroenterology training (McMaster Children’s Hospital).</li>
-              <li>Fellow, American Academy of Pediatrics (FAAP).</li>
-              <li>Licentiate of the Medical Council of Canada (LMCC).</li>
-              <li>Video Capsule Endoscopy Certification – Yale New Haven Children’s Hospital (2018).</li>
-              <li>Diploma – U.S. Air Force School of Aerospace Medicine, Texas, USA.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Professional Experience</h3>
-            <span class="section-tagline">Selected roles</span>
-          </div>
-          <div class="card">
-            <div class="item">
-              <strong>Al Farabi Gastroenterology &amp; Endoscopy Center</strong> – Pediatric Gastroenterologist Consultant<br />
-              <span class="item-meta">Diyala Health Ministry, Diyala, Iraq · Apr 2025 – Present</span>
-            </div>
-
-            <div class="item">
-              <strong>Maternity &amp; Children Hospital, Buraydah (Al Qassim Health Cluster)</strong><br />
-              Pediatric Gastroenterology Consultant – Ministry of Health, Saudi Arabia<br />
-              <span class="item-meta">Feb 2024 – Feb 2025</span>
-            </div>
-
-            <div class="item">
-              <strong>Ibn Sina Pediatric Gastroenterology Clinic, Baghdad</strong> – Pediatric GI Consultant<br />
-              <span class="item-meta">Apr 2022 – Jan 2024</span>
-            </div>
-
-            <div class="item">
-              <strong>Seashell Medical Centre, Milton, Ontario</strong><br />
-              Pediatrician & Pediatric Gastroenterology / Hepatology / Clinical Nutrition<br />
-              <span class="item-meta">Aug 2016 – Mar 2022</span>
-            </div>
-
-            <div class="item">
-              <strong>Oakville Pediatric Gastroenterology Clinic, Oakville, ON</strong><br />
-              Pediatrician & Pediatric Gastroenterologist<br />
-              <span class="item-meta">Mar 2016 – Aug 2016</span>
-            </div>
-
-            <div class="item">
-              <strong>McMaster Children’s Hospital, Hamilton, ON</strong><br />
-              Gastroenterology, Hepatology & Nutrition Fellow<br />
-              <span class="item-meta">Jul 2013 – Dec 2015</span>
-            </div>
-
-            <div class="item">
-              <strong>Children’s Hospital, Western University, London, ON</strong><br />
-              Pediatric Resident<br />
-              <span class="item-meta">Jul 2010 – Jun 2013</span>
-            </div>
-          </div>
-        </section>
-
-        <!-- ACADEMIC / RESEARCH -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Academic, Research & Teaching</h3>
-          </div>
-          <div class="card">
-            <ul>
-              <li>Supervision of multiple pediatric GI case forums for Saudi Pediatric Board residents (magnet ingestion, TEF, juvenile polyposis, intestinal lymphangiectasia, post–liver transplant care, refractory constipation, celiac disease, post-Kasai care, peptic ulcer disease, and others).</li>
-              <li>Establishment and leadership of the “Qassim Peds Podcast Group” for structured case-based learning.</li>
-              <li>Ongoing retrospective research projects in iatrogenic hyponatremia, unnecessary investigations, and regional analysis of magnetic ingestion in children.</li>
-              <li>Earlier academic work in Iraq, Canada, and military aerospace medicine including clinical reviews and policy-related topics.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- PUBLICATIONS (HIGHLIGHTS) -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Selected Publications & Abstracts</h3>
-          </div>
-          <div class="card">
-            <ul>
-              <li><strong>Pediatric Segmental Intestinal Lymphangiectasia</strong> – Journal of Pediatric Gastroenterology and Nutrition, 2018.</li>
-              <li><strong>Pediatric Duodenal Dieulafoy’s Lesion</strong> – Journal of Clinical Gastroenterology and Hepatology, 2017.</li>
-              <li><strong>Dieulafoy’s Lesion – Rare Cause of Upper GI Bleeding</strong> – CDDW presentation, 2014.</li>
-              <li><strong>Pediatric IBD Activity and Fecal Calprotectin</strong> – CDDW presentation, 2015.</li>
-              <li><strong>Tuberculous Abdominal Cocoon in a Twelve-Year-Old Girl</strong> – The Lancet Infectious Diseases, 2015.</li>
-              <li>Multiple ongoing and submitted case reports and retrospective analyses in pediatric gastroenterology.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- MEMBERSHIPS -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">Professional Memberships & Leadership</h3>
-          </div>
-          <div class="card">
-            <div class="pill-row">
-              <span class="pill">NASPGHAN</span>
-              <span class="pill">Canadian Association of Gastroenterology</span>
-              <span class="pill">Canadian Pediatric Society</span>
-              <span class="pill">American Academy of Pediatrics</span>
-              <span class="pill">Ontario Medical Association</span>
-              <span class="pill">Canadian Medical Protective Association</span>
-            </div>
-            <ul>
-              <li>Founder, Iraqi Medical Association of North America (online group).</li>
-              <li>Former Deputy Chief, Aerospace & Naval Medicine Division, Iraqi Surgeon General (Baghdad, Green Zone).</li>
-              <li>Multiple hospital leadership and committee roles in pediatrics, public health, food safety, and residency education.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- REFERENCES -->
-        <section class="section">
-          <div class="section-header">
-            <h3 class="section-title">References</h3>
-          </div>
-          <div class="card">
-            <p>Detailed references and reference letters are available upon request.</p>
-          </div>
-        </section>
-      </main>
     </div>
-  </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        © <span id="year"></span> Dr. Mohammad Hussein, MD, FRCPC. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const links = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => {
+        links.classList.toggle('open');
+      });
+    }
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          links.classList.remove('open');
+        }
+      });
+    });
+
+    // Year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
