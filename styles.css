@@ -23,7 +23,15 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* Make links in the blue header readable */
+.site-header a {
+  color: #e3f2fd;
+}
 
+.site-header a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
 .container {
   width: 100%;
   max-width: 1120px;
