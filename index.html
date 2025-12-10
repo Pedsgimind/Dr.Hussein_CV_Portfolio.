@@ -23,6 +23,7 @@
       flex-direction: column;
     }
 
+    /* (Old .cv-header styles kept but no longer used) */
     .cv-header {
       background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
       border-bottom: 1px solid rgba(148, 163, 184, 0.25);
@@ -164,7 +165,11 @@
     }
 
     section.cv-section {
-      background: radial-gradient(circle at top left, rgba(15, 118, 110, 0.18), rgba(15, 23, 42, 0.96));
+      background: radial-gradient(
+        circle at top left,
+        rgba(15, 118, 110, 0.18),
+        rgba(15, 23, 42, 0.96)
+      );
       border-radius: 1.25rem;
       border: 1px solid rgba(148, 163, 184, 0.35);
       padding: 1.3rem 1.4rem 1.4rem;
@@ -307,7 +312,7 @@
       color: #9ca3af;
     }
 
-    /* ===== RESPONSIVE ===== */
+    /* ===== RESPONSIVE (OLD) ===== */
     @media (max-width: 900px) {
       .cv-header-inner {
         grid-template-columns: minmax(0, 1fr);
@@ -338,41 +343,206 @@
         grid-template-columns: minmax(0, 1fr);
       }
     }
+
+    /* ===== CV HERO LAYOUT (NEW) ===== */
+
+    .cv-hero {
+      background: radial-gradient(circle at top left, #0ea5e9 0, #020617 55%);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 3.25rem 0 2.75rem;
+    }
+
+    .cv-hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .cv-hero-left h1 {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      margin: 0 0 0.5rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #f9fafb;
+    }
+
+    .cv-hero-subtitle {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-weight: 600;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+      color: #bae6fd;
+      font-size: 0.98rem;
+    }
+
+    .cv-hero-lead {
+      max-width: 40rem;
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #e5e7eb;
+    }
+
+    /* CONTACT INFO BOX ON LEFT */
+    .cv-hero-contact {
+      margin-top: 1.75rem;
+      padding: 1rem 1.25rem;
+      border-radius: 0.9rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #e5e7eb;
+    }
+
+    .cv-hero-contact p {
+      margin: 0.1rem 0;
+    }
+
+    .cv-hero-contact a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    .cv-hero-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* BUTTON ROW */
+    .cv-hero-actions {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(10px);
+    }
+
+    .cv-btn:hover {
+      border-color: #0ea5e9;
+      color: #f9fafb;
+    }
+
+    .cv-btn-secondary {
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .cv-btn-outline {
+      background: transparent;
+      border-style: dashed;
+    }
+
+    /* RIGHT SIDE: BIG PHOTO */
+    .cv-hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cv-hero-photo-wrapper {
+      width: 100%;
+      max-width: 360px;        /* controls how big the photo is */
+      aspect-ratio: 3 / 4;     /* tall rectangle; change to 1 / 1 for square */
+      border-radius: 1.5rem;   /* rounded corners */
+      overflow: hidden;
+      border: 2px solid rgba(148, 163, 184, 0.65);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.8);
+      background: #020617;
+    }
+
+    .cv-hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;       /* fills the box nicely */
+      display: block;
+    }
+
+    /* MOBILE: stack vertically */
+    @media (max-width: 768px) {
+      .cv-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .cv-hero-right {
+        order: -1;  /* photo on top on small screens; remove if you prefer text first */
+      }
+    }
   </style>
 </head>
 <body class="cv-page">
 <div class="cv-shell">
 
-  <!-- HEADER -->
-  <header class="cv-header">
-    <div class="cv-header-inner">
-      <div>
-        <h1 class="cv-name">Mohammad Hussein, MD, FRCPC</h1>
-        <p class="cv-title">Royal College–Certified Pediatrician &amp; Pediatric Gastroenterologist</p>
-        <p class="cv-tagline">
-          Board-certified pediatrician and pediatric gastroenterologist (Royal College of Physicians and
-          Surgeons of Canada) with expertise in inflammatory bowel disease, eosinophilic gastrointestinal
-          disorders, motility and functional testing, and complex nutrition across diverse international
-          practice settings.
+  <!-- NEW HERO (PHOTO RIGHT, CONTACT LEFT) -->
+  <section class="cv-hero">
+    <div class="cv-hero-inner">
+      <!-- LEFT SIDE: TEXT + CONTACT + BUTTONS -->
+      <div class="cv-hero-left">
+        <h1>Mohammad Hussein, MD, FRCPC</h1>
+
+        <p class="cv-hero-subtitle">
+          ROYAL COLLEGE–CERTIFIED PEDIATRICIAN &amp; PEDIATRIC GASTROENTEROLOGIST
         </p>
-        <img src="profile.jpg" alt="Dr. Mohammad Hussein" class="profile-photo">
-        <div class="cv-links">
-          <a class="cv-chip" href="https://www.pedsgimind.ca">www.pedsgimind.ca</a>
-          <a class="cv-chip" href="https://www.pedsgimind.ca/cv-portfolio/">Online CV &amp; Portfolio</a>
-          <a class="cv-chip" href="mailto:Mohammad.Hussein@pedsgimind.ca">Email Dr. Hussein</a>
+
+        <p class="cv-hero-lead">
+          Board-certified pediatrician and pediatric gastroenterologist (Royal College of
+          Physicians and Surgeons of Canada) with expertise in inflammatory bowel disease,
+          eosinophilic gastrointestinal disorders, motility and functional testing, and
+          complex nutrition across diverse international practice settings.
+        </p>
+
+        <!-- CONTACT INFO MOVED HERE (SMALL YELLOW BOX AREA) -->
+        <div class="cv-hero-contact">
+          <p><strong>Address:</strong> 7 Turquoise Drive, Hamilton, ON L8W 4A4, Canada</p>
+          <p><strong>Tel (Canada):</strong> +1-226-700-2190</p>
+          <p><strong>Tel (Saudi Arabia):</strong> +966-54-863-9217</p>
+          <p><strong>Email:</strong> <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a></p>
+          <p><strong>Website:</strong> <a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a></p>
+          <p><strong>Online CV:</strong> <a href="https://www.pedsgimind.ca/cv-portfolio/">www.pedsgimind.ca/cv-portfolio/</a></p>
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="cv-hero-actions">
+          <a href="https://www.pedsgimind.ca" class="cv-btn">www.pedsgimind.ca</a>
+          <a href="https://www.pedsgimind.ca/cv-portfolio/" class="cv-btn cv-btn-secondary">
+            Online CV &amp; Portfolio
+          </a>
+          <a href="mailto:Mohammad.Hussein@pedsgimind.ca" class="cv-btn cv-btn-outline">
+            Email Dr. Hussein
+          </a>
         </div>
       </div>
-      <div class="cv-contact">
-        <div><strong>Address:</strong> 7 Turquoise Drive, Hamilton, ON L8W 4A4, Canada</div>
-        <div><strong>Tel (Canada):</strong> +1-226-700-2190</div>
-        <div><strong>Tel (Saudi Arabia):</strong> +966-54-863-9217</div>
-        <div><strong>Email:</strong> <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a></div>
-        <div><strong>Website:</strong> <a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a></div>
-        <div><strong>Online CV:</strong> <a href="https://www.pedsgimind.ca/cv-portfolio/">www.pedsgimind.ca/cv-portfolio/</a></div>
+
+      <!-- RIGHT SIDE: BIG PHOTO -->
+      <div class="cv-hero-right">
+        <div class="cv-hero-photo-wrapper">
+          <img
+            src="profile.jpg"
+            alt="Dr. Mohammad Hussein"
+            class="cv-hero-photo"
+          />
+        </div>
       </div>
     </div>
-  </header>
+  </section>
 
+  <!-- MAIN LAYOUT -->
   <main class="cv-main">
     <!-- SIDEBAR NAV -->
     <aside class="cv-side">
