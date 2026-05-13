@@ -90,6 +90,40 @@
     }
     .contact-card p { margin: 0; color: var(--muted); font-size: .96rem; }
 
+
+    .hero-actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(18, 53, 91, .18);
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #ffffff;
+      font-weight: 800;
+      font-size: .95rem;
+      letter-spacing: .01em;
+      text-decoration: none;
+      box-shadow: 0 12px 24px rgba(18, 53, 91, .18);
+      cursor: pointer;
+    }
+    .action-btn:hover { text-decoration: none; filter: brightness(1.06); }
+    .action-btn.secondary {
+      background: #ffffff;
+      color: var(--navy);
+      border-color: rgba(18, 53, 91, .22);
+      box-shadow: 0 10px 20px rgba(18, 53, 91, .08);
+    }
+
     .portrait-wrap {
       justify-self: center;
       width: 260px;
@@ -254,7 +288,7 @@
       .hero, .cv-section, .toc { box-shadow: none; }
       .hero { border-radius: 0; border: none; border-bottom: 2px solid #d7dee8; padding: 20px 0; }
       .layout { display: block; }
-      .toc { display: none; }
+      .toc, .hero-actions { display: none !important; }
       .cv-section { break-inside: avoid; border: none; border-bottom: 1px solid #d7dee8; border-radius: 0; padding: 18px 0; }
       a { color: inherit; text-decoration: none; }
     }
@@ -271,6 +305,14 @@
 <p>Website: <a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a></p>
 <p>Online CV/Portfolio: https://<a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a>/Dr.Hussein_CV_Portfolio./</p>
 <p>Tel: +1-226-700-2190</p>
+        </div>
+        <div class="hero-actions" aria-label="CV download actions">
+          <a class="action-btn" href="assets/Dr_Mohammad_Hussein_CV.pdf" target="_blank" rel="noopener" download>
+            Download PDF CV
+          </a>
+          <button class="action-btn secondary" type="button" onclick="window.print()">
+            Print / Save as PDF
+          </button>
         </div>
       </div>
       <div class="portrait-wrap">
@@ -414,6 +456,7 @@
 <li>Uses structured history-taking, careful documentation, differential diagnosis, rational investigation planning, treatment plans, follow-up recommendations, and escalation guidance.</li>
 <li>Works within a shared-care model with local physicians and clinic teams, including telemedicine-based assessment and coordination of in-person review or procedures when clinically indicated.</li>
 <li>Virtual and shared-care model with local clinic coordination.</li>
+<li>Current practice location listed as Avicenna Medical Inc - Al Farabi Gastroenterology &amp; Endoscopy Center, Diyala Branch, Diyala Health Ministry, Diyala, Iraq.</li>
 </ul>
 <h3>Maternity &amp; Children Hospital, Buraydah - Al Qassim Health Cluster, Ministry of Health, Kingdom of Saudi Arabia</h3>
 <p class="detail-line">Buraydah, Al Qassim, Kingdom of Saudi Arabia</p>
