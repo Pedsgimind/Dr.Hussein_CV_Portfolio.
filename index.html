@@ -2,698 +2,803 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mohammad Hussein, MD, FRCPC</title>
+  <meta name="description" content="Mohammad Hussein, MD, FRCPC - RCPSC-Certified Pediatrician and Pediatric Gastroenterologist" />
   <style>
-
     :root {
-      --bg: #f5f7fb;
-      --paper: #ffffff;
-      --ink: #182033;
-      --muted: #5b6475;
-      --line: #dfe5ef;
-      --accent: #1f4e79;
-      --accent-2: #edf4fb;
-      --accent-3: #0f766e;
-      --shadow: 0 24px 70px rgba(24, 32, 51, 0.10);
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --navy: #12355b;
+      --navy-2: #164a7a;
+      --blue: #2563eb;
+      --teal: #0f766e;
+      --soft-blue: #eff6ff;
+      --soft-teal: #ecfdf5;
+      --line: #d7dee8;
+      --panel: #ffffff;
+      --paper: #f5f7fb;
+      --shadow: 0 18px 40px rgba(18, 53, 91, 0.12);
+      --radius: 22px;
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: linear-gradient(135deg, #eef4fb 0%, #f8fafc 50%, #f4f7fb 100%);
+      background: linear-gradient(180deg, #eef4fb 0%, var(--paper) 34%, #ffffff 100%);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.62;
+      font-size: 16px;
     }
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .page {
-      width: min(1160px, calc(100% - 32px));
-      margin: 32px auto;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      overflow: hidden;
+
+    .page { max-width: 1180px; margin: 0 auto; padding: 34px 22px 64px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) 300px;
+      gap: 34px;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fbff 45%, #eaf4ff 100%);
+      border: 1px solid rgba(18, 53, 91, 0.14);
+      border-radius: 30px;
+      padding: 38px;
       box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
     }
-    header {
-      padding: 44px 52px 36px;
-      background:
-        radial-gradient(circle at top left, rgba(31, 78, 121, 0.22), transparent 34%),
-        linear-gradient(135deg, #f8fbff 0%, #ffffff 54%, #eef7f6 100%);
-      border-bottom: 1px solid var(--line);
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto auto;
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, rgba(37,99,235,.16), rgba(37,99,235,0) 68%);
+      transform: translate(20%, -35%);
+      pointer-events: none;
     }
+    .hero-content, .portrait-wrap { position: relative; z-index: 1; }
     h1 {
-      margin: 0 0 8px;
-      font-size: clamp(2.1rem, 4.5vw, 4.1rem);
-      line-height: 1.05;
-      letter-spacing: -0.045em;
-      color: #102033;
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.25rem, 4.5vw, 4.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      font-weight: 850;
     }
     .subtitle {
-      margin: 0;
-      color: var(--accent);
+      margin: 16px 0 0;
+      color: var(--navy-2);
+      font-size: 1.13rem;
       font-weight: 700;
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      letter-spacing: 0.01em;
+      max-width: 860px;
     }
-    .contact {
+    .contact-card {
+      margin-top: 24px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px 18px;
+      gap: 8px 18px;
+      max-width: 780px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(18, 53, 91, .14);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+    }
+    .contact-card p { margin: 0; color: var(--muted); font-size: .96rem; }
+
+    .portrait-wrap {
+      justify-self: center;
+      width: 260px;
+      padding: 12px;
+      border-radius: 28px;
+      background: linear-gradient(145deg, #ffffff, #e8f1ff);
+      border: 1px solid rgba(18,53,91,.18);
+      box-shadow: 0 20px 45px rgba(18, 53, 91, .18);
+    }
+    .portrait {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 28px;
       margin-top: 28px;
-      padding-top: 22px;
-      border-top: 1px solid rgba(31, 78, 121, 0.18);
-      color: var(--muted);
-      font-size: 0.97rem;
+      align-items: start;
     }
-    main { padding: 22px 52px 52px; }
-    section {
-      padding: 28px 0;
+    .toc {
+      position: sticky;
+      top: 18px;
+      background: rgba(255,255,255,.92);
+      border: 1px solid rgba(18,53,91,.12);
+      border-radius: 22px;
+      box-shadow: 0 12px 28px rgba(18,53,91,.08);
+      padding: 14px;
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+    }
+    .toc a {
+      display: block;
+      color: #334155;
+      font-size: .88rem;
+      font-weight: 650;
+      padding: 8px 10px;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+    .toc a:hover { background: var(--soft-blue); color: var(--navy); text-decoration: none; }
+
+    .content { display: grid; gap: 20px; }
+    .cv-section {
+      background: var(--panel);
+      border: 1px solid rgba(18, 53, 91, .12);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 30px rgba(18, 53, 91, .07);
+      padding: 28px;
+      overflow: hidden;
+    }
+    .section-title-row {
       border-bottom: 1px solid var(--line);
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      position: relative;
     }
-    section:last-child { border-bottom: 0; padding-bottom: 0; }
+    .section-title-row::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 78px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--navy), var(--teal));
+    }
     h2 {
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: 1.15rem;
-      line-height: 1.25;
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.2rem;
+      line-height: 1.2;
+      letter-spacing: .02em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-weight: 800;
+      font-weight: 850;
     }
     h3 {
-      margin: 24px 0 9px;
-      color: #16233a;
-      font-size: 1.08rem;
+      color: var(--navy-2);
+      margin: 1.25rem 0 .45rem;
+      font-size: 1.02rem;
       line-height: 1.35;
       font-weight: 800;
     }
-    .section-body > h3:first-child { margin-top: 0; }
-    p {
-      margin: 0 0 12px;
+    .paragraph {
+      margin: .62rem 0;
       color: var(--ink);
       font-size: 1rem;
     }
-    ul {
-      margin: 9px 0 15px 1.15rem;
-      padding: 0;
-    }
-    li {
-      margin: 4px 0;
-      padding-left: 0.15rem;
+    .detail-line {
+      margin: .42rem 0;
+      color: var(--muted);
+      font-weight: 600;
     }
     .role-line {
       display: flex;
-      gap: 16px;
-      align-items: baseline;
       justify-content: space-between;
-      margin: 8px 0 10px;
-      padding: 10px 14px;
-      border-left: 4px solid var(--accent-3);
-      background: var(--accent-2);
-      border-radius: 12px;
-      color: #16233a;
-      font-weight: 700;
+      gap: 18px;
+      align-items: baseline;
+      margin: .7rem 0 .25rem;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, #f8fafc, #eff6ff);
+      border: 1px solid rgba(18,53,91,.09);
+      color: var(--navy);
+      font-weight: 800;
     }
-    .role-line .date { color: var(--muted); font-weight: 650; white-space: nowrap; }
-    .plain-line {
-      margin: 0 0 8px;
-      color: var(--muted);
-      font-weight: 650;
+    .role-line time {
+      color: var(--teal);
+      font-weight: 800;
+      white-space: nowrap;
+      font-size: .94rem;
     }
-    .compact-card {
-      background: #fbfdff;
-      border: 1px solid #e8eef6;
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin: 14px 0;
+    .cv-list {
+      margin: .5rem 0 1rem 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 7px;
     }
-    @media (max-width: 760px) {
-      .page { width: 100%; margin: 0; border-radius: 0; border-left: 0; border-right: 0; }
-      header, main { padding-left: 22px; padding-right: 22px; }
-      .contact { grid-template-columns: 1fr; }
-      .role-line { display: block; }
-      .role-line .date { display: block; margin-top: 2px; }
+    .cv-list li {
+      position: relative;
+      padding-left: 22px;
+      color: #263244;
     }
-    @media print {
-      body { background: #ffffff; }
-      .page { width: 100%; margin: 0; border: 0; border-radius: 0; box-shadow: none; }
-      header { padding-top: 24px; }
-      section { break-inside: avoid; }
-      a { color: inherit; text-decoration: none; }
+    .cv-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .72em;
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--teal);
+      box-shadow: 0 0 0 4px rgba(15,118,110,.08);
     }
 
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; padding: 28px; }
+      .portrait-wrap { order: -1; width: min(260px, 72vw); }
+      .contact-card { grid-template-columns: 1fr; }
+      .layout { grid-template-columns: 1fr; }
+      .toc { position: relative; top: 0; max-height: none; display: flex; overflow-x: auto; gap: 4px; }
+      .toc a { white-space: nowrap; }
+    }
+    @media (max-width: 640px) {
+      .page { padding: 18px 12px 40px; }
+      .hero { border-radius: 22px; padding: 22px; }
+      .cv-section { padding: 20px; border-radius: 18px; }
+      .role-line { flex-direction: column; gap: 2px; align-items: flex-start; }
+      h1 { letter-spacing: -0.035em; }
+    }
+
+    @media print {
+      body { background: #fff; font-size: 11pt; }
+      .page { max-width: none; padding: 0; }
+      .hero, .cv-section, .toc { box-shadow: none; }
+      .hero { border-radius: 0; border: none; border-bottom: 2px solid #d7dee8; padding: 20px 0; }
+      .layout { display: block; }
+      .toc { display: none; }
+      .cv-section { break-inside: avoid; border: none; border-bottom: 1px solid #d7dee8; border-radius: 0; padding: 18px 0; }
+      a { color: inherit; text-decoration: none; }
+    }
   </style>
 </head>
 <body>
   <div class="page">
-    <header>
-      <h1>Mohammad Hussein, MD, FRCPC</h1>
-      <p class="subtitle">RCPSC-Certified Pediatrician and Pediatric Gastroenterologist</p>
-      <div class="contact">
-        <div>Email: <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a></div>
-        <div>Website: <a href="https://www.pedsgimind.ca" target="_blank" rel="noopener">www.pedsgimind.ca</a></div>
-        <div>Online CV/Portfolio: <a href="https://www.pedsgimind.ca/Dr.Hussein_CV_Portfolio./" target="_blank" rel="noopener">https://www.pedsgimind.ca/Dr.Hussein_CV_Portfolio./</a></div>
-        <div>Tel: +1-226-700-2190</div>
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Mohammad Hussein, MD, FRCPC</h1>
+        <p class="subtitle">RCPSC-Certified Pediatrician and Pediatric Gastroenterologist</p>
+        <div class="contact-card">
+          <p>Email: <a href="mailto:Mohammad.Hussein@pedsgimind.ca">Mohammad.Hussein@pedsgimind.ca</a></p>
+<p>Website: <a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a></p>
+<p>Online CV/Portfolio: https://<a href="https://www.pedsgimind.ca">www.pedsgimind.ca</a>/Dr.Hussein_CV_Portfolio./</p>
+<p>Tel: +1-226-700-2190</p>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="data:image/png;base64,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H/z1p/e99MD9bz35xIcvvfjo7//7L7+/99WnHli3/G87Pl768ZKn3vjrb17+40+e/dX3AMrtS58kbVspz9ihzdujy91jwO6roOfU8/BdKva4XX602AAsHi3RgVAWDxfKF7I44RICi4NWAJHfYxF2WUXt4IsxFuuc+kM9vosnpkKXL6IsBgKhu7lavE1ZXLiN+ZVBOBiCNB26eP7wQFdToa1UJy7XCauNYsjOV069xKd1EBZHHACfZNwtviKExVGnoFfNBVaseQnChA2M7Wuw6z4AR3z7sfsf+v6//OH7337ov7772H0/ePbXP1/yp4c/evaZda+8/PiDP3nu0V+/+tQf3nrxkRVvPPnha0+8/Niv/njfvz57/w9f+P297z7+221vPZu+ZmnOurexG9/Db12hTN5swybW8HDQ1B8q1B4rNx8tMxwp0U0Wq0DoHwb8haA/D2jQeh0Wm13a1mLbmQND0ZkLsXuVhyORyJz/ru5cbksWbyBANOCHbvrSyaPDrXUVZmWhil9jlqEsovXilWkdIaTpYTt80pIxl2jYzh91Io4IIPabWVUMnDEribFpNebDN5PffX3r688CiE/97Ad/+I9vPfi9f334+9959Affe/zeHz7/858uuf937zz0xyd/95Onf/+TZx/82QsP/fLVR3/36mO/eeGBnzzxi+8/f/99z//mB0se+vnHzz+y6fUnNr/x5J73XsKsfYe+cbk8aaObkNooJg1axFOlxhOVCI4xEJUAYmwXN0n8byPOYvcVFn1OhEVfqePS8YPR8BwytxoNh0IhYPGuPgV4G7IYvrIf5RUKETNAb5g8Oxfxz0RnL54c72/wmAo1giqLrE3JRE+9dKhZcRbBGodsAuhdgMUhGw9wRCpFK8enJGhSEhgbPkl7Z8neN17a+cbf1r/8zPt/feiVB37xp//6d9DD3/v2g9/+5we/9U9/+pf//cR3v/v8D3/4+H3/+Zf//t7zv/zx24/+YdnDv3v2Zz986sf/+er9P33se//7qfu+8+4jv92+5NldS59f/8KfN/7tz9DZYJa/DDgq9m+y5yfWCfAjdhmACIqBqLhiimIURJTFASuYIsJih1Xks82z2FJsmz45ibAYDkTCwUAo6A+EFlm8uXFlejsOYjxd+2fnooFZ+HhmTh3uqS8pt8jLTRKfIj7dHZ/WEQCLAxbehAf54IHF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" alt="Mohammad Hussein, MD, FRCPC" />
       </div>
     </header>
-    <main>
-    <section id="professional-profile">
-      <h2>Professional Profile</h2>
-      <div class="section-body">
-        <p>Royal College-certified pediatrician and pediatric gastroenterologist with Canadian residency and fellowship training and a broad clinical background in pediatric gastroenterology, hepatology, nutrition, endoscopy, motility and functional gastrointestinal disorders. Clinical interests include inflammatory bowel disease, eosinophilic gastrointestinal disorders, complex constipation and fecal incontinence, feeding and nutrition disorders, gastrointestinal manifestations of neurodevelopmental conditions, pediatric liver disease, gastrointestinal bleeding, and virtual/in-person consultative care.</p>
-        <p>Experienced in diagnostic and interventional pediatric endoscopy, enteral-access procedures, capsule endoscopy, pH-impedance testing, hydrogen/methane breath testing, anorectal manometry, and percutaneous liver biopsy. Practice experience spans Canada, Saudi Arabia, Iraq, and earlier military/aerospace medicine settings, with ongoing involvement in teaching, quality improvement, resident education, case-based learning, and clinical research.</p>
-        <p>His practice is grounded in comprehensive, family-centered pediatric gastroenterology and a broad pediatric foundation, including general pediatrics, emergency pediatrics, inpatient pediatrics, newborn assessment, Level II nursery exposure, nutrition, growth, virtual care workflows, and multidisciplinary coordination.</p>
+
+    <main class="layout">
+      <nav class="toc" aria-label="CV section navigation">
+        <a href="#professional-profile">Professional Profile</a>
+<a href="#core-strengths-and-clinical-focus">Core Strengths and Clinical Focus</a>
+<a href="#licensure-certification-and-eligibility">Licensure, Certification and Eligibility</a>
+<a href="#clinical-diagnostic-and-procedural-capabilities">Clinical, Diagnostic and Procedural Capabilities</a>
+<a href="#professional-experience-and-appointments">Professional Experience and Appointments</a>
+<a href="#medical-education-and-postgraduate-training">Medical Education and Postgraduate Training</a>
+<a href="#education">Education</a>
+<a href="#additional-professional-experience-and-early-career-roles">Additional Professional Experience and Early Career Roles</a>
+<a href="#complete-certifications-and-examinations">Complete Certifications and Examinations</a>
+<a href="#publications-abstracts-and-research-output">Publications, Abstracts and Research Output</a>
+<a href="#teaching-supervision-and-academic-leadership">Teaching, Supervision and Academic Leadership</a>
+<a href="#quality-improvement-and-systems-work">Quality Improvement and Systems Work</a>
+<a href="#professional-development-and-academic-activities">Professional Development and Academic Activities</a>
+<a href="#conferences-and-major-meetings">Conferences and Major Meetings</a>
+<a href="#awards-and-achievements">Awards and Achievements</a>
+<a href="#leadership-committee-and-community-roles">Leadership, Committee and Community Roles</a>
+<a href="#selected-professional-memberships-and-affiliations">Selected Professional Memberships and Affiliations</a>
+<a href="#languages">Languages</a>
+<a href="#references">References</a>
+      </nav>
+      <div class="content">
+        
+<section id="professional-profile" class="cv-section">
+  <div class="section-title-row"><h2>Professional Profile</h2></div>
+  <p class="paragraph">Royal College-certified pediatrician and pediatric gastroenterologist with Canadian residency and fellowship training and a broad clinical background in pediatric gastroenterology, hepatology, nutrition, endoscopy, motility and functional gastrointestinal disorders. Clinical interests include inflammatory bowel disease, eosinophilic gastrointestinal disorders, complex constipation and fecal incontinence, feeding and nutrition disorders, gastrointestinal manifestations of neurodevelopmental conditions, pediatric liver disease, gastrointestinal bleeding, and virtual/in-person consultative care.</p>
+<p class="paragraph">Experienced in diagnostic and interventional pediatric endoscopy, enteral-access procedures, capsule endoscopy, pH-impedance testing, hydrogen/methane breath testing, anorectal manometry, and percutaneous liver biopsy. Practice experience spans Canada, Saudi Arabia, Iraq, and earlier military/aerospace medicine settings, with ongoing involvement in teaching, quality improvement, resident education, case-based learning, and clinical research.</p>
+<p class="paragraph">His practice is grounded in comprehensive, family-centered pediatric gastroenterology and a broad pediatric foundation, including general pediatrics, emergency pediatrics, inpatient pediatrics, newborn assessment, Level II nursery exposure, nutrition, growth, virtual care workflows, and multidisciplinary coordination.</p>
+</section>
+<section id="core-strengths-and-clinical-focus" class="cv-section">
+  <div class="section-title-row"><h2>Core Strengths and Clinical Focus</h2></div>
+  <ul class="cv-list">
+<li>Royal College-certified in both Pediatrics and Pediatric Gastroenterology.</li>
+<li>Canadian-trained through Pediatric Residency at Western University / London Health Sciences Centre and Pediatric Gastroenterology Fellowship at McMaster Children’s Hospital.</li>
+<li>Broad pediatric gastroenterology scope including inflammatory bowel disease, celiac disease, eosinophilic gastrointestinal disorders, feeding difficulties, malabsorption, chronic diarrhea, reflux, gastrointestinal bleeding, constipation, fecal incontinence, pancreatitis, post-liver transplant care, and cholestatic liver disease.</li>
+<li>Procedural experience in upper endoscopy, colonoscopy, biopsy, polypectomy, hemostasis, foreign body removal, esophageal dilation, PEG placement, PEC placement, and liver biopsy.</li>
+<li>Functional and motility testing experience including anorectal manometry, hydrogen/methane breath testing, pH and dual pH-impedance studies, and capsule endoscopy.</li>
+<li>Experience with biologic infusion therapy and complex pediatric inflammatory bowel disease care.</li>
+<li>Background in general pediatrics, emergency pediatrics, inpatient pediatrics, newborn care, and Level II nursery exposure.</li>
+<li>Strong interest in systems improvement, Choosing Wisely principles, teaching innovation, and structured case-based education.</li>
+</ul>
+</section>
+<section id="licensure-certification-and-eligibility" class="cv-section">
+  <div class="section-title-row"><h2>Licensure, Certification and Eligibility</h2></div>
+  <ul class="cv-list">
+<li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatrics - June 2023.</li>
+<li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatric Gastroenterology - November 2025.</li>
+<li>Licentiate of the Medical Council of Canada (LMCC)- 2009.</li>
+<li>MINC: CAMD-0078-9005.</li>
+<li>EICS number: E283499.</li>
+<li>College of Physicians and Surgeons of Alberta (CPSA) - Practice Permit / Medical Licence #049505.</li>
+<li>College of Physicians and Surgeons of New Brunswick (CPSNB) - Licence #51327.</li>
+<li>Northwest Territories medical licence - Licence # 2500-74743</li>
+<li>Member, Royal College of Paediatrics and Child Health - MRCPCH-UK Final Certification Exam Candidate.</li>
+<li>ABOM Certification Exam eligibility cycle 2026.</li>
+<li>NBNSC Certification Exam eligibility cycle 2026.</li>
+</ul>
+</section>
+<section id="clinical-diagnostic-and-procedural-capabilities" class="cv-section">
+  <div class="section-title-row"><h2>Clinical, Diagnostic and Procedural Capabilities</h2></div>
+  <h3>Pediatric Gastroenterology, Hepatology and Nutrition</h3>
+<ul class="cv-list">
+<li>Inflammatory bowel disease, including biologic infusion follow-up and complex inflammatory bowel disease care.</li>
+<li>Eosinophilic gastrointestinal disorders.</li>
+<li>Celiac disease and malabsorption syndromes.</li>
+<li>Complex constipation, fecal incontinence, refractory constipation, and functional gastrointestinal disorders.</li>
+<li>Feeding problems, selective and restrictive eating, growth concerns, pediatric nutrition, enteral nutrition, and complex nutrition support.</li>
+<li>Gastrointestinal manifestations of Autism Spectrum Disorder and other neurodevelopmental conditions.</li>
+<li>Gastroesophageal reflux disease, abdominal pain, chronic diarrhea, vomiting, cyclic vomiting syndrome, and suspected motility disorders.</li>
+<li>Acute and chronic gastrointestinal bleeding, including upper and lower gastrointestinal bleeding.</li>
+<li>Cholestatic liver disease, neonatal cholestasis, indirect hyperbilirubinemia in infancy, post-Kasai care, post-liver transplant follow-up, and pancreatitis care.</li>
+<li>Magnet ingestion, button battery ingestion, foreign body ingestion, and related gastrointestinal complications.</li>
+</ul>
+<h3>Pediatric Endoscopy</h3>
+<ul class="cv-list">
+<li>Pediatric upper endoscopy and colonoscopy.</li>
+<li>Mucosal biopsy from esophagus, stomach, duodenum, colon, and terminal ileum.</li>
+<li>Polypectomy in the upper and lower gastrointestinal tract.</li>
+<li>Endoscopic hemostasis for upper and lower gastrointestinal bleeding using injection, clipping, cautery, or other appropriate endoscopic techniques.</li>
+<li>Foreign body removal from the esophagus, stomach, duodenum, colon, or rectum.</li>
+<li>Esophageal dilation for selected pediatric strictures, including strictures related to esophageal atresia, achalasia, and gastroesophageal reflux disease.</li>
+<li>Management of esophageal varices, including band ligation or sclerotherapy when clinically indicated.</li>
+<li>Biopsy from esophagus, stomach, and duodenum for celiac disease, eosinophilic esophagitis, Helicobacter pylori, and other pathology.</li>
+</ul>
+<h3>Enteral Access and Advanced Endoscopic Procedures</h3>
+<ul class="cv-list">
+<li>Percutaneous endoscopic gastrostomy placement for long-term enteral nutrition.</li>
+<li>Implemented an endoscopic PEG program at Maternity and Children Hospital in Buraydah, Saudi Arabia, transitioning selected patients away from open surgical gastrostomy toward a less invasive endoscopic approach.</li>
+<li>Percutaneous endoscopic cecostomy placement for selected children with severe constipation and fecal incontinence requiring antegrade continence enemas.</li>
+<li>PEG tube pre-procedure, intra-procedural, and post-procedure care.</li>
+</ul>
+<h3>Liver Biopsy</h3>
+<ul class="cv-list">
+<li>Certified in performing percutaneous liver biopsy.</li>
+<li>Experience with ultrasound-guided technique to optimize needle placement in real time.</li>
+<li>Experience with Menghini needle suction technique.</li>
+<li>Experience with Tru-Cut spring-loaded automated core sampling.</li>
+</ul>
+<h3>Motility and Functional Testing</h3>
+<ul class="cv-list">
+<li>Anorectal manometry: independent performance, interpretation, reporting, and clinical management based on findings.</li>
+<li>Hydrogen and methane breath testing: independent performance, interpretation, and management of related conditions.</li>
+<li>pH and dual pH-impedance studies: autonomous performance, interpretation, reporting, and treatment planning.</li>
+</ul>
+<h3>Capsule Endoscopy</h3>
+<ul class="cv-list">
+<li>Certified by Yale New Haven Children’s Hospital, Connecticut, USA, June 2018.</li>
+<li>Experience performing capsule endoscopy, interpreting results, and integrating findings into pediatric gastrointestinal management.</li>
+<li>Capable of performing the procedure, interpreting results, and treating conditions based on findings.</li>
+</ul>
+</section>
+<section id="professional-experience-and-appointments" class="cv-section">
+  <div class="section-title-row"><h2>Professional Experience and Appointments</h2></div>
+  <h3>WELL Health Medical Centres</h3>
+<p class="detail-line">Calgary, Alberta, Canada | Suite 183, 5005 Dalhousie Drive NW, Calgary, AB T3A 5R8 | Clinic phone: 403-202-8888</p>
+<div class="role-line"><span>Pediatrician and Pediatric Gastroenterologist</span><time>April 2026 - Present</time></div>
+<ul class="cv-list">
+<li>Current Alberta-based community pediatric and pediatric gastroenterology practice.</li>
+<li>Provides community-based pediatric and pediatric gastroenterology consultation in Alberta.</li>
+<li>Clinical focus includes pediatric gastrointestinal complaints, complex constipation, reflux, abdominal pain, nutrition and feeding issues, inflammatory bowel disease triage/follow-up, and shared-care consultation.</li>
+<li>Provides pediatric and pediatric gastroenterology consultation with emphasis on clear documentation, practical investigation planning, safety-netting, and shared-care communication.</li>
+<li>Provides care within Canadian regulatory and documentation standards, including appropriate virtual-care workflows when applicable.</li>
+<li>Uses structured consultation letters, diagnostic stewardship, family education, and safety-netting as core elements of clinical practice.</li>
+<li>Limited virtual visits may be delivered under WELL/Tia workflows where applicable.</li>
+</ul>
+<h3>Avicenna Medical Inc - Al Farabi Gastroenterology &amp; Endoscopy Center, Diyala Branch</h3>
+<p class="detail-line">Diyala Health Ministry, Diyala, Iraq</p>
+<div class="role-line"><span>Pediatric Gastroenterology</span><time>April 2025 – April 2026</time></div>
+<ul class="cv-list">
+<li>Provides pediatric gastroenterology consultation for infants, children, and adolescents with gastrointestinal, hepatobiliary, nutritional, and feeding-related disorders.</li>
+<li>Pediatric gastroenterology consultation for children with gastrointestinal, hepatobiliary, nutritional, and feeding-related disorders.</li>
+<li>Assesses complex and long-standing gastrointestinal presentations, including constipation, abdominal pain, chronic diarrhea, malabsorption, reflux, feeding difficulties, suspected inflammatory bowel disease, celiac disease, and liver disease.</li>
+<li>Uses structured history-taking, careful documentation, differential diagnosis, rational investigation planning, treatment plans, follow-up recommendations, and escalation guidance.</li>
+<li>Works within a shared-care model with local physicians and clinic teams, including telemedicine-based assessment and coordination of in-person review or procedures when clinically indicated.</li>
+<li>Virtual and shared-care model with local clinic coordination.</li>
+<li>Current practice location listed as Avicenna Medical Inc - Al Farabi Gastroenterology &amp; Endoscopy Center, Diyala Branch, Diyala Health Ministry, Diyala, Iraq.</li>
+</ul>
+<h3>Maternity &amp; Children Hospital, Buraydah - Al Qassim Health Cluster, Ministry of Health, Kingdom of Saudi Arabia</h3>
+<p class="detail-line">Buraydah, Al Qassim, Kingdom of Saudi Arabia</p>
+<div class="role-line"><span>Pediatric Gastroenterology</span><time>February 2024 - February 2025</time></div>
+<ul class="cv-list">
+<li>Worked in the  Pediatric Gastroenterology section within a regional maternal and children’s hospital while also contributing to general pediatrics, emergency pediatrics, and neonatal/inpatient care.</li>
+<li>Managed outpatient pediatric gastroenterology clinics, virtual clinics, endoscopy lists, and daycare infusion therapy.</li>
+<li>Provided pediatric endoscopy services including diagnostic and therapeutic upper and lower endoscopy.</li>
+<li>Helped implement an endoscopic PEG program, transitioning selected patients away from open surgical gastrostomy toward a less invasive endoscopic approach.</li>
+<li>Participated in biologic infusion care for pediatric inflammatory bowel disease, including infliximab, adalimumab, vedolizumab, and iron infusion therapy as part of ongoing clinical care.</li>
+<li>Led and supervised structured teaching activities for residents, registrars, interns and medical students.</li>
+<li>Supervised Saudi Pediatric Board resident case forums and contributed to research and quality-improvement initiatives.</li>
+<li>Provided pediatric gastroenterology consultation for complex gastrointestinal and hepatobiliary disorders.</li>
+<li>Contributed to coverage in general pediatrics on demands.</li>
+</ul>
+<h3>Clinical Activities at Maternity &amp; Children Hospital</h3>
+<ul class="cv-list">
+<li>Outpatient pediatric gastroenterology clinics.</li>
+<li>Virtual clinics.</li>
+<li>Endoscopy list every Tuesday, historically listed as 7:00 am - 12:00 pm.</li>
+<li>Daycare clinic for infusion therapy, historically listed as Monday and Wednesday, 7:00 am - 2:00 pm.</li>
+<li>Administration and monitoring of biologic inflammatory bowel disease medications and elemental iron infusions as part of ongoing patient care.</li>
+<li>Pediatric gastroenterology consultation for complex gastrointestinal and hepatobiliary disorders.</li>
+<li>Coverage contributions to general pediatrics, emergency pediatrics, and NICU several days per week.</li>
+</ul>
+<h3>Teaching Activities at Maternity &amp; Children Hospital</h3>
+<ul class="cv-list">
+<li>Noon case-based teaching sessions on chronic diarrhea, malabsorption, cyclic vomiting syndrome, and neonatal cholestasis.</li>
+<li>Half-day teaching activities including GI bleeding lecture on April 17, 2024 and GI MCQ session on May 8, 2024.</li>
+<li>Created and supervised the “Qassim Peds Podcast Group.”</li>
+<li>October 19, 2024 - Approach to the Yellow Baby.</li>
+<li>October 22, 2024 - Approach to Chronic Diarrhea and Malabsorption Syndromes.</li>
+<li>October 27, 2024 - Approach to the Puking Child / cyclic vomiting syndrome.</li>
+</ul>
+<h3>Saudi Pediatric Board Resident Case Forums Supervised</h3>
+<ul class="cv-list">
+<li>Magnet ingestion and button battery in the esophagus requiring urgent endoscopic removal.</li>
+<li>Tracheoesophageal fistula secondary to button battery ingestion.</li>
+<li>Lower gastrointestinal bleeding and juvenile polyposis syndromes.</li>
+<li>Primary intestinal lymphangiectasia and cardiac hepatopathy.</li>
+<li>Post-liver transplant follow-up and acute pancreatitis care.</li>
+<li>Cholestasis and indirect hyperbilirubinemia in infancy.</li>
+<li>PEG tube pre-procedure, intra-procedural, and post-procedure care.</li>
+<li>Sexual abuse presenting as chronic functional abdominal pain and constipation.</li>
+<li>Approach to refractory constipation in children.</li>
+<li>Celiac disease - diagnostic approach and NASPGHAN / ESPGHAN guidelines.</li>
+<li>Post-Kasai care and ERCP for choledocholithiasis in pediatrics.</li>
+<li>Peptic ulcer disease in a child - full diagnostic and management approach.</li>
+</ul>
+<h3>Research, Quality Improvement and Community Involvement at Maternity &amp; Children Hospital</h3>
+<ul class="cv-list">
+<li>Use of unnecessary laboratory and imaging studies at MCH, 2019-2024, with goal of establishing a Saudi Choosing Wisely initiative.</li>
+<li>Incidence and prevalence of iatrogenic hyponatremia in admitted children at MCH, aiming to establish local guidelines aligned with Canadian Pediatric Society recommendations.</li>
+<li>Regional analysis of magnetic ingestion in children - Al-Qassim, Saudi Arabia, ongoing 2024.</li>
+<li>Participation in Rukin Hayakum, a public educational initiative at MCH aimed at patient and family education.</li>
+<li>Occasional involvement in local and national teaching forums.</li>
+<li>Member, Qassim local chapter for Saudi Society of Pediatric Gastroenterology, Hepatology and Nutrition, Feb2024-Feb2025</li>
+</ul>
+<h3>Ibn Sina Pediatric Gastroenterology Clinic / Avicenna Medical Inc</h3>
+<p class="detail-line">Al Maghrib Street, Al Adhamyia, Baghdad, Iraq</p>
+<div class="role-line"><span>Pediatric Gastroenterology</span><time>April 2022 - January 2024</time></div>
+<ul class="cv-list">
+<li>Provided pediatric and pediatric gastroenterology consultative care through a predominantly telemedicine/shared-care model.</li>
+<li>Provided pediatric gastroenterology consultative and advisory work, predominantly remote/telemedicine.</li>
+<li>Managed complex gastrointestinal, nutritional, and hepatobiliary cases in collaboration with local physicians and families.</li>
+<li>Managed complex pediatric gastrointestinal disorders through detailed history, review of available records, investigation planning, family counselling, written consultation reports, and follow-up recommendations.</li>
+<li>Developed detailed consultation letters, follow-up recommendations, investigation plans, and practical management pathways for children with chronic gastrointestinal symptoms.</li>
+<li>Collaborated with local physicians and clinic team to support access to subspecialty care.</li>
+<li>Worked to improve access to pediatric gastroenterology expertise in a setting where subspecialty access and patient financial constraints were significant practical barriers.</li>
+</ul>
+<h3>Seashell Medical Centre</h3>
+<p class="detail-line">330 Bronte Street South, Milton, Ontario, Canada</p>
+<div class="role-line"><span>Pediatrics and Pediatric Gastroenterology</span><time>August 2016 - March 2022</time></div>
+<ul class="cv-list">
+<li>Provided community-based pediatric and pediatric gastroenterology consultation in Ontario.</li>
+<li>Community pediatric and pediatric gastroenterology practice.</li>
+<li>Assessed and managed pediatric gastrointestinal and nutritional conditions, including reflux, abdominal pain, constipation, feeding concerns, growth concerns, chronic diarrhea, celiac disease, suspected inflammatory bowel disease, and hepatobiliary presentations.</li>
+<li>Assessment of pediatric gastrointestinal complaints including constipation, reflux, abdominal pain, chronic diarrhea, celiac disease, growth and nutrition concerns, hepatobiliary concerns, and suspected inflammatory bowel disease.</li>
+<li>Maintained a broad pediatric practice while applying pediatric gastroenterology expertise in a community consultation model.</li>
+<li>Coordinated investigations, referrals, follow-up plans, family counselling, and safety-netting within the outpatient setting.</li>
+</ul>
+<h3>Oakville Pediatric Gastroenterology Clinic</h3>
+<p class="detail-line">455 Trafalgar Road, Oakville, Ontario, Canada</p>
+<div class="role-line"><span>Pediatrics and Pediatric Gastroenterology</span><time>March 2016 - August 2016</time></div>
+<ul class="cv-list">
+<li>Provided pediatric gastroenterology consultation in a community outpatient clinic setting.</li>
+<li>Outpatient pediatric gastroenterology consultation.</li>
+<li>Assessed children and adolescents with gastrointestinal, nutritional, growth, and hepatobiliary concerns.</li>
+</ul>
+</section>
+<section id="medical-education-and-postgraduate-training" class="cv-section">
+  <div class="section-title-row"><h2>Medical Education and Postgraduate Training</h2></div>
+  <h3>McMaster Children’s Hospital, McMaster University</h3>
+<p class="detail-line">1280 Main Street West, Hamilton, Ontario L8S 4K1, Canada</p>
+<div class="role-line"><span>Fellow, Pediatric Gastroenterology, Hepatology and Nutrition</span><time>July 2013 - December 2015</time></div>
+<ul class="cv-list">
+<li>Completed fellowship training in pediatric gastroenterology, hepatology, and nutrition.</li>
+<li>Participated in inpatient and outpatient pediatric gastroenterology care, endoscopy, consult services, multidisciplinary teaching, radiology rounds, pathology rounds, and academic rounds.</li>
+<li>Developed expertise in inflammatory bowel disease, liver disease, nutrition, endoscopy, motility-related disorders, celiac disease, chronic diarrhea, malabsorption, gastrointestinal bleeding, and complex pediatric gastrointestinal presentations.</li>
+<li>Participated in outpatient clinics, inpatient consults, procedures, multidisciplinary rounds, pathology rounds, radiology rounds, and academic teaching.</li>
+</ul>
+<h3>Children’s Hospital, Western University / London Health Sciences Centre</h3>
+<p class="detail-line">London Health Sciences Centre, London, Ontario, Canada</p>
+<div class="role-line"><span>Pediatric Resident</span><time>July 2010 - June 2013</time></div>
+<ul class="cv-list">
+<li>Completed Canadian pediatric residency training.</li>
+<li>Gained experience in general pediatrics, emergency pediatrics, inpatient pediatrics, neonatal care, pediatric subspecialties, and child-health advocacy.</li>
+<li>General pediatrics, emergency pediatrics, inpatient pediatrics, neonatal care, subspecialty pediatrics, teaching, and academic presentations.</li>
+<li>Developed foundational experience in newborn assessment, neonatal resuscitation, jaundice, hypoglycemia, feeding and weight-gain concerns, respiratory distress, sepsis evaluation, and escalation to higher-level neonatal care when clinically required.</li>
+<li>Participated in clinical teaching, pediatric academic rounds, and resident education initiatives.</li>
+</ul>
+</section>
+<section id="education" class="cv-section">
+  <div class="section-title-row"><h2>Education</h2></div>
+  <ul class="cv-list">
+<li>MBChB - Bachelor of Medicine and Bachelor of Surgery, Baghdad College of Medicine, University of Baghdad, Baghdad, Iraq, September 1995 - June 2002.</li>
+<li>BSc (Hons), Diyala, Iraq, September 1991 - June 1994.</li>
+</ul>
+</section>
+<section id="additional-professional-experience-and-early-career-roles" class="cv-section">
+  <div class="section-title-row"><h2>Additional Professional Experience and Early Career Roles</h2></div>
+  <h3>Canadian Chiropractic Examining Board (CCEB)</h3>
+<p class="detail-line">1209 59 Avenue SE, Calgary, Alberta T2H 2M3, Canada</p>
+<div class="role-line"><span>Simulated Patient / Simulated Health Care Professional</span><time>November 2008 - May 2010</time></div>
+<h3>Pharmacy Examining Board of Canada (PEBC)</h3>
+<p class="detail-line">717 Church Street, Toronto, Ontario M4W 2M4, Canada</p>
+<div class="role-line"><span>Simulated Patient / Simulated Health Care Professional</span><time>November 2009 - May 2010</time></div>
+<h3>Aerospace &amp; Naval Medicine Department, Iraqi Surgeon General</h3>
+<p class="detail-line">Green International Zone, Baghdad, Iraq</p>
+<div class="role-line"><span>Deputy Chief</span><time>March 2006 - October 2006</time></div>
+<h3>School of Aerospace Medicine, Brooks Air Force Base</h3>
+<p class="detail-line">San Antonio, Texas, USA</p>
+<div class="role-line"><span>Iraqi Air Force Liaison</span><time>June 2006 - October 2006</time></div>
+<h3>New Al-Muthana Aerospace Clinic, Aerospace and Naval Medicine Department, Iraqi Surgeon General</h3>
+<p class="detail-line">Baghdad International Airport, Iraqi Air Force Camp, Iraq</p>
+<div class="role-line"><span>Commander</span><time>March 2006 - June 2006</time></div>
+<h3>Ministry of Health, Office of Special Operation</h3>
+<p class="detail-line">Baghdad, Iraq</p>
+<div class="role-line"><span>Senior Registrar Medical Doctor</span><time>January 2005 - February 2005</time></div>
+<h3>Rusafa Medical Directorate, Ministry of Health</h3>
+<p class="detail-line">Baghdad, Iraq</p>
+<div class="role-line"><span>Rotating Medical Intern / Chief Resident</span><time>October 2002 - February 2005</time></div>
+</section>
+<section id="complete-certifications-and-examinations" class="cv-section">
+  <div class="section-title-row"><h2>Complete Certifications and Examinations</h2></div>
+  <ul class="cv-list">
+<li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatrics - June 2023.</li>
+<li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatric Gastroenterology - November 2025.</li>
+<li>Member, Royal College of Paediatrics and Child Health - MRCPCH-UK Final Certification Exam Candidate.</li>
+<li>Video Capsule Endoscopy Certification - Yale New Haven Children’s Hospital, Connecticut, USA - June 2018.</li>
+<li>Licentiate of the Medical Council of Canada.</li>
+<li>MINC: CAMD-0078-9005.</li>
+<li>EICS number: E283499.</li>
+<li>Medical Council of Canada Qualifying Examination Part II - Hamilton, Ontario - May 2009.</li>
+<li>Medical Council of Canada Qualifying Examination Part I - Hamilton, Ontario - November 2008.</li>
+<li>Medical Council of Canada Evaluating Examination - Toronto, Ontario - January 2008.</li>
+<li>IMG Program Assessment, CEHPEA-CE1, currently NAC OSCE - Toronto, Ontario - August 2009.</li>
+<li>Diploma, School of Aerospace Medicine - U.S. Air Force School of Aerospace Medicine, Brooks Air Force Base, San Antonio, Texas, USA - June 2006 - October 2006.</li>
+<li>Diploma, English Language - Defense Language Institute Foreign Language Center, Lackland Air Force Base, San Antonio, Texas, USA - June 2006 - October 2006.</li>
+<li>Liver Biopsy Certification - 2024.</li>
+<li>Neonatal Resuscitation Program, University of Western Ontario, London, Ontario - 2010-2013.</li>
+<li>Pediatric Advanced Life Support, University of Western Ontario, London, Ontario - 2010-2013.</li>
+<li>Advanced Pediatric Life Support, University of Western Ontario, London, Ontario - 2010-2013.</li>
+<li>Advanced Cardiac Life Support, CEHPEA, Toronto, Ontario - May 2010.</li>
+<li>Orientation to the Canadian Health Care System, Culture, and Context for International Pharmacists - Leslie Dan Faculty of Pharmacy, University of Toronto, Toronto, Ontario - January 2009 - March 2009.</li>
+<li>Crucial Conversations: Teamwork and Communication Training Program - Schulich School of Medicine &amp; Dentistry, University of Western Ontario - March 2011.</li>
+<li>Research Certificate: Clinical Trial Methodology in Practice - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
+<li>Research Certificate: Fundamentals of Health Research &amp; Evaluation - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
+<li>Research Certificate: Methodology of Clinical Trial Research Coordination - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
+</ul>
+</section>
+<section id="publications-abstracts-and-research-output" class="cv-section">
+  <div class="section-title-row"><h2>Publications, Abstracts and Research Output</h2></div>
+  <h3>Peer-Reviewed Publications</h3>
+<ul class="cv-list">
+<li>Alrashidi, S. H., Al-Harbi, F., AlObailan, Y. I., Alkhalifah, Y. S., Alghasham, Y. A., Hussein, M., &amp; Alabood, M. A. (2025). Tracheoesophageal fistula with esophageal atresia in the Qassim region: Epidemiology, clinical characteristics, and outcomes - a retrospective study. Georgian Medical News, (10), 176-182.</li>
+<li>Pediatric segmental intestinal lymphangiectasia. Case report and literature review. Journal of Pediatric Gastroenterology and Nutrition, 2018.</li>
+<li>Pediatric duodenal Dieulafoy’s lesion: A serious but rare cause of upper gastrointestinal bleeding. Journal of Clinical Gastroenterology and Hepatology, November 9, 2017.</li>
+<li>Tuberculous abdominal cocoon in a twelve-year-old girl. Case report and literature review. The Lancet Infectious Diseases, 2015.</li>
+</ul>
+<h3>Submitted / In Progress</h3>
+<ul class="cv-list">
+<li>Ulcerative colitis and Budd-Chiari syndrome association in a child. Manuscript submitted to the Saudi Journal of Gastroenterology, 2024.</li>
+<li>Regional analysis of magnetic ingestion in children: Insights from Al-Qassim, Saudi Arabia. Retrospective study, 2024-ongoing.</li>
+<li>Use of unnecessary laboratory and imaging studies at Maternity and Children Hospital, 2019-2024, as a Choosing Wisely initiative.</li>
+<li>Incidence and prevalence of iatrogenic hyponatremia in admitted children at Maternity and Children Hospital.</li>
+</ul>
+<h3>Abstracts / Presentations</h3>
+<ul class="cv-list">
+<li>Is it really leukemia? Case report and literature review. Presented at Canadian Pediatric Society meeting, 2013.</li>
+<li>Congenital myotonic dystrophy and chylothorax - a common disease with a rarely reported association. Presented at Canadian Pediatric Society meeting, 2012.</li>
+<li>Worsening headaches after a concussion: Expected or unusual? Case report of newly diagnosed hydrocephalus post-concussion with literature review. Presented at Canadian Pediatric Society meeting, 2011.</li>
+</ul>
+</section>
+<section id="teaching-supervision-and-academic-leadership" class="cv-section">
+  <div class="section-title-row"><h2>Teaching, Supervision and Academic Leadership</h2></div>
+  <ul class="cv-list">
+<li>Designed and delivered structured education for pediatric residents, fellows, registrars, interns and medical students.</li>
+<li>Conducted case-based teaching sessions on chronic diarrhea, malabsorption, cyclic vomiting syndrome, neonatal cholestasis, gastrointestinal bleeding, celiac disease, refractory constipation, and other core pediatric gastroenterology topics.</li>
+<li>Established, scripted, supervised, and created the “Qassim Peds Podcast Group” for residents, registrars, interns, and medical students.</li>
+<li>Supervised Saudi Pediatric Board resident case forums covering magnet ingestion, button battery complications, juvenile polyposis, intestinal lymphangiectasia, cardiac hepatopathy, post-liver transplant care, acute pancreatitis, cholestasis, PEG care, sexual abuse presenting as abdominal pain/constipation, refractory constipation, celiac disease, post-Kasai care, ERCP for choledocholithiasis, and peptic ulcer disease.</li>
+<li>Recipient, Best Teacher Award, University of Western Ontario, London, Ontario, Canada, 2013.</li>
+<li>Established curriculum for Residents as Teachers of Publics / Residents as Teachers program during pediatric residency training.</li>
+<li>Educator / Teacher, Medical Students Teaching Series, Clinical Teaching Units, University of Western Ontario, 2011-2013.</li>
+<li>Pre-Clerkship Year II Clinical Skills Mentor, University of Western Ontario, July 2012.</li>
+<li>Established curriculum for an International Medical Graduates bridging program, Partner Performance and Associate Organization, Hamilton, Ontario, 2008-2010.</li>
+</ul>
+</section>
+<section id="quality-improvement-and-systems-work" class="cv-section">
+  <div class="section-title-row"><h2>Quality Improvement and Systems Work</h2></div>
+  <ul class="cv-list">
+<li>Supervised or contributed to retrospective quality-improvement/research projects at Maternity and Children Hospital.</li>
+<li>Use of unnecessary laboratory and imaging studies at MCH, 2019-2024, with the goal of developing Choosing Wisely-aligned practice improvements.</li>
+<li>Incidence and prevalence of iatrogenic hyponatremia in admitted children, aiming to inform local guidelines aligned with pediatric best practice.</li>
+<li>Regional analysis of magnetic ingestion in children in Al-Qassim, Saudi Arabia.</li>
+<li>Implemented a pediatric endoscopic PEG pathway at Maternity and Children Hospital, Buraydah.</li>
+<li>Developed structured case-based learning and podcast-style teaching to support pediatric trainees and multidisciplinary education.</li>
+</ul>
+</section>
+<section id="professional-development-and-academic-activities" class="cv-section">
+  <div class="section-title-row"><h2>Professional Development and Academic Activities</h2></div>
+  <h3>2002-2005 - Early Clinical and Academic Activities, Iraq</h3>
+<h3>Rusafa Health Centre, Ministry of Health, Baghdad, Iraq:</h3>
+<ul class="cv-list">
+<li>Type 1 Diabetes Mellitus - clinical review, Ibn Baladi Hospital.</li>
+<li>Neonatal Sepsis - local incidence rate study, Ibn Baladi Hospital.</li>
+<li>Epstein-Barr Virus - case presentation and literature review, Al-Jwader Hospital.</li>
+</ul>
+<h3>2005-2006 - Aerospace Medicine and Military-Related Academic Work, USA</h3>
+<h3>Defense Language Institute / School of Aerospace Medicine, San Antonio, Texas:</h3>
+<ul class="cv-list">
+<li>Alcohol and the Military Aviator.</li>
+<li>New Iraqi Aerospace Medicine - From Old to New Formulation and Transition: Successes and Limitations.</li>
+<li>Medications and the Military Aviator.</li>
+</ul>
+<h3>2009 - Research and Academic Skills, McMaster University</h3>
+<h3>Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario:</h3>
+<ul class="cv-list">
+<li>Ultrasound Use in Simple Sacral Dimple - literature search and study design, HRM-721 proposed research project.</li>
+<li>Conflict of Interest in Clinical Trials - Tri-Council Policy Statement, Chapter 7.</li>
+</ul>
+<h3>2010-2013 - Pediatric Academic Rounds, Western University</h3>
+<h3>2010 - London Health Sciences Centre / University of Western Ontario</h3>
+<ul class="cv-list">
+<li>Syncope in Children - May 2010.</li>
+<li>Hematuria in Children - case presentation and literature review - August 2010.</li>
+<li>Increased Energy Intake for Preterm Infants with or Developing Bronchopulmonary Dysplasia / Chronic Lung Disease, Lai NM, 2011 - September 2010.</li>
+<li>Neonatal Intraventricular Hemorrhage - September 2010.</li>
+<li>Resuscitation of Newborn Infants with 21% or 100% Oxygen - review and meta-analysis, Ola Didrik Saugstad, 2008 - October 2010.</li>
+</ul>
+<h3>2011 - London Health Sciences Centre / University of Western Ontario</h3>
+<ul class="cv-list">
+<li>Transfusion of Leukocyte-Depleted Red Blood Cells Is Not a Risk Factor for New Onset or Progressive Multiple Organ Dysfunction in Critically Ill Children, Judith van der Wal, 2011 - October 2011.</li>
+</ul>
+<h3>2012 - London Health Sciences Centre / University of Western Ontario</h3>
+<ul class="cv-list">
+<li>Guideline for the Evaluation of Cholestatic Jaundice in Infants - Recommendations of NASPGHAN - February 2012.</li>
+</ul>
+<h3>2013 - Hamilton Health Sciences / McMaster University</h3>
+<ul class="cv-list">
+<li>Segmental Intestinal Lymphangiectasia - rare case presentation with literature review - August 2013.</li>
+</ul>
+</section>
+<section id="conferences-and-major-meetings" class="cv-section">
+  <div class="section-title-row"><h2>Conferences and Major Meetings</h2></div>
+  <h3>January 2015</h3>
+<ul class="cv-list">
+<li>Advanced Endoscopy Course, Hamilton General Hospital.</li>
+<li>Seventh Canadian GI Fellows Program in IBD, Grand Hotel and Suites, Toronto, Ontario.</li>
+</ul>
+<h3>February 27 - March 2, 2015</h3>
+<ul class="cv-list">
+<li>Canadian Digestive Diseases Week and the Annual CASL Winter Meeting, Fairmont Banff Springs, Banff, Alberta.</li>
+</ul>
+<h3>February 2014</h3>
+<ul class="cv-list">
+<li>Canadian Digestive Diseases Week and the Annual CASL Winter Meeting, Toronto, Ontario.</li>
+</ul>
+<h3>January - December 2014, McMaster Children’s Hospital, McMaster University, Hamilton, Ontario</h3>
+<ul class="cv-list">
+<li>Pediatric Gastroenterology Pathology Rounds.</li>
+<li>Pediatric Gastroenterology Rounds.</li>
+<li>Pediatric Gastroenterology Radiology Rounds.</li>
+</ul>
+<h3>October 2014</h3>
+<ul class="cv-list">
+<li>High-Resolution Manometry - Esophageal Function, St. Joseph’s Healthcare, Hamilton, Ontario.</li>
+<li>Very Early Onset Inflammatory Bowel Disease, Hospital for Sick Children, Toronto, Ontario.</li>
+</ul>
+<h3>2014</h3>
+<ul class="cv-list">
+<li>Steinberg’s 2014 Board Review in Gastroenterology, Arlington, Virginia, USA.</li>
+<li>Translational Approaches to Inflammatory Liver Injury, University of Calgary Liver Unit, Calgary, Alberta.</li>
+</ul>
+<h3>August 2014</h3>
+<ul class="cv-list">
+<li>Mount Sinai Intensive Review in Gastroenterology and Hepatology, Icahn School of Medicine at Mount Sinai, New York, USA.</li>
+<li>20th Annual Pediatric Board Review, Cleveland Clinic Educational Foundation, Cleveland, Ohio, USA.</li>
+</ul>
+<h3>July 31 - August 2013</h3>
+<ul class="cv-list">
+<li>Boston MedStudy Intensive Pediatric Board Review, Boston, Texas, USA.</li>
+</ul>
+<h3>February 2013, 2014, 2015, 2016, 2018, 2022</h3>
+<ul class="cv-list">
+<li>McMaster Intensive Pediatric Board Review, Hamilton, Ontario.</li>
+</ul>
+<h3>NASPGHAN Annual Meeting and Postgraduate Course</h3>
+<ul class="cv-list">
+<li>2013, 2014, 2015, 2017, 2022, 2023.</li>
+</ul>
+<h3>Canadian Pediatric Society Conference</h3>
+<ul class="cv-list">
+<li>2012, 2013, 2015, 2017, 2023.</li>
+</ul>
+</section>
+<section id="awards-and-achievements" class="cv-section">
+  <div class="section-title-row"><h2>Awards and Achievements</h2></div>
+  <ul class="cv-list">
+<li>Best Teacher Award, University of Western Ontario, London, Ontario, Canada - 2013.</li>
+<li>Educator / Teacher, Medical Students Teaching Series, Clinical Teaching Units, University of Western Ontario - 2011-2013.</li>
+<li>Pre-Clerkship Year II Clinical Skills Mentor, University of Western Ontario - July 2012.</li>
+<li>Distinguished Physician Award, Ibn Baladi Hospital, Baghdad, Iraq - 2003-2004.</li>
+<li>Best Doctor of the Year, Ibn Baladi Hospital, Baghdad, Iraq - 2003-2004.</li>
+<li>Played a managerial role in keeping Ibn Baladi Hospital operational during the 2003 war with only three physicians, limited healthcare professionals, and scarce resources.</li>
+</ul>
+</section>
+<section id="leadership-committee-and-community-roles" class="cv-section">
+  <div class="section-title-row"><h2>Leadership, Committee and Community Roles</h2></div>
+  <h3>Aerospace and Naval Medicine Division, Iraqi Surgeon General, Ministry of Defense, Baghdad, Iraq</h3>
+<ul class="cv-list">
+<li>Division Deputy Chief - 2005-2006.</li>
+<li>Committee Chief: Pilots and Aircrews Selection - 2005-2006.</li>
+<li>Committee Chief: Food Safety Inspection - 2005-2006.</li>
+<li>Committee Chief: Public Health Committee - 2005-2006.</li>
+<li>Clinic Chief, Al-Muthana Air Base - 2005-2006.</li>
+</ul>
+<h3>Ibn Al-Balady Hospital, Baghdad, Iraq</h3>
+<ul class="cv-list">
+<li>Salary Distribution Committee - Member, 2003-2005.</li>
+<li>Food Safety Inspection Committee - Member, 2003-2005.</li>
+<li>Iraqi Medical Union of Excellent Employees - Member, 2003-2005.</li>
+<li>Chief Resident - 2003-2005.</li>
+<li>Pediatrics Hospital Medical Director - 2003-2004.</li>
+</ul>
+<h3>Other Academic / Professional Roles</h3>
+<ul class="cv-list">
+<li>Iraqi Medical Association - Member, 2003-present.</li>
+<li>Pediatrics CaRMS Interview Committee - Member, University of Western Ontario, London, Ontario - 2011-2012.</li>
+<li>Delegate, American Academy of Pediatrics, Pediatrics Program, University of Western Ontario, London, Ontario - 2011-2012.</li>
+<li>Residents Wellbeing Committee - Member, Pediatric Residency Program, University of Western Ontario, London, Ontario - 2011-2013.</li>
+<li>Residents as Teachers of Public Committee - Core Leader, Pediatric Residency Program, University of Western Ontario - 2011-2013.</li>
+<li>Settlement and Integration Services Organization - Member, Hamilton, Ontario - 2008-2012.</li>
+</ul>
+</section>
+<section id="selected-professional-memberships-and-affiliations" class="cv-section">
+  <div class="section-title-row"><h2>Selected Professional Memberships and Affiliations</h2></div>
+  <ul class="cv-list">
+<li>Canadian Medical Protective Association - Member, 2010-present.</li>
+<li>Canadian Pediatric Society - Member, 2010-present.</li>
+<li>American Academy of Pediatrics - Member, 2010-present.</li>
+<li>Ontario Medical Association - Member, 2010-present.</li>
+<li>Canadian Medical Association - Member, 2013-present.</li>
+<li>Canadian Association of Gastroenterology - Member, 2013-present.</li>
+<li>North American Society for Pediatric Gastroenterology, Hepatology and Nutrition - Member, 2013-present.</li>
+<li>Canadian Iraqi Medical Society - Member, 2010-present.</li>
+<li>Iraqi Medical Association of North America online group - Founder, 2012-present.</li>
+<li>Iraqi Medical Association - Member, 2003-present.</li>
+<li>Qassim local chapter, Saudi Society of Pediatric Gastroenterology, Hepatology and Nutrition - Member, February 2024-2025</li>
+</ul>
+</section>
+<section id="languages" class="cv-section">
+  <div class="section-title-row"><h2>Languages</h2></div>
+  <ul class="cv-list">
+<li>Arabic - Fluent.</li>
+<li>English - Fluent.</li>
+<li>Turkish - Intermediate.</li>
+</ul>
+</section>
+<section id="references" class="cv-section">
+  <div class="section-title-row"><h2>References</h2></div>
+  <p class="paragraph">Detailed references and/or reference letters available upon request.</p>
+</section>
       </div>
-    </section>
-    <section id="core-strengths-and-clinical-focus">
-      <h2>Core Strengths and Clinical Focus</h2>
-      <div class="section-body">
-        <ul>
-          <li>Royal College-certified in both Pediatrics and Pediatric Gastroenterology.</li>
-          <li>Canadian-trained through Pediatric Residency at Western University / London Health Sciences Centre and Pediatric Gastroenterology Fellowship at McMaster Children’s Hospital.</li>
-          <li>Broad pediatric gastroenterology scope including inflammatory bowel disease, celiac disease, eosinophilic gastrointestinal disorders, feeding difficulties, malabsorption, chronic diarrhea, reflux, gastrointestinal bleeding, constipation, fecal incontinence, pancreatitis, post-liver transplant care, and cholestatic liver disease.</li>
-          <li>Procedural experience in upper endoscopy, colonoscopy, biopsy, polypectomy, hemostasis, foreign body removal, esophageal dilation, PEG placement, PEC placement, and liver biopsy.</li>
-          <li>Functional and motility testing experience including anorectal manometry, hydrogen/methane breath testing, pH and dual pH-impedance studies, and capsule endoscopy.</li>
-          <li>Experience with biologic infusion therapy and complex pediatric inflammatory bowel disease care.</li>
-          <li>Background in general pediatrics, emergency pediatrics, inpatient pediatrics, newborn care, and Level II nursery exposure.</li>
-          <li>Strong interest in systems improvement, Choosing Wisely principles, teaching innovation, and structured case-based education.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="licensure-certification-and-eligibility">
-      <h2>Licensure, Certification and Eligibility</h2>
-      <div class="section-body">
-        <ul>
-          <li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatrics - June 2023.</li>
-          <li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatric Gastroenterology - November 2025.</li>
-          <li>Licentiate of the Medical Council of Canada (LMCC)- 2009.</li>
-          <li>MINC: CAMD-0078-9005.</li>
-          <li>EICS number: E283499.</li>
-          <li>College of Physicians and Surgeons of Alberta (CPSA) - Practice Permit / Medical Licence #049505.</li>
-          <li>College of Physicians and Surgeons of New Brunswick (CPSNB) - Licence #51327.</li>
-          <li>Northwest Territories medical licence - Licence # 2500-74743</li>
-          <li>Member, Royal College of Paediatrics and Child Health - MRCPCH-UK Final Certification Exam Candidate.</li>
-          <li>ABOM Certification Exam eligibility cycle 2026.</li>
-          <li>NBNSC Certification Exam eligibility cycle 2026.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="clinical-diagnostic-and-procedural-capabilities">
-      <h2>Clinical, Diagnostic and Procedural Capabilities</h2>
-      <div class="section-body">
-        <h3>Pediatric Gastroenterology, Hepatology and Nutrition</h3>
-        <ul>
-          <li>Inflammatory bowel disease, including biologic infusion follow-up and complex inflammatory bowel disease care.</li>
-          <li>Eosinophilic gastrointestinal disorders.</li>
-          <li>Celiac disease and malabsorption syndromes.</li>
-          <li>Complex constipation, fecal incontinence, refractory constipation, and functional gastrointestinal disorders.</li>
-          <li>Feeding problems, selective and restrictive eating, growth concerns, pediatric nutrition, enteral nutrition, and complex nutrition support.</li>
-          <li>Gastrointestinal manifestations of Autism Spectrum Disorder and other neurodevelopmental conditions.</li>
-          <li>Gastroesophageal reflux disease, abdominal pain, chronic diarrhea, vomiting, cyclic vomiting syndrome, and suspected motility disorders.</li>
-          <li>Acute and chronic gastrointestinal bleeding, including upper and lower gastrointestinal bleeding.</li>
-          <li>Cholestatic liver disease, neonatal cholestasis, indirect hyperbilirubinemia in infancy, post-Kasai care, post-liver transplant follow-up, and pancreatitis care.</li>
-          <li>Magnet ingestion, button battery ingestion, foreign body ingestion, and related gastrointestinal complications.</li>
-        </ul>
-        <h3>Pediatric Endoscopy</h3>
-        <ul>
-          <li>Pediatric upper endoscopy and colonoscopy.</li>
-          <li>Mucosal biopsy from esophagus, stomach, duodenum, colon, and terminal ileum.</li>
-          <li>Polypectomy in the upper and lower gastrointestinal tract.</li>
-          <li>Endoscopic hemostasis for upper and lower gastrointestinal bleeding using injection, clipping, cautery, or other appropriate endoscopic techniques.</li>
-          <li>Foreign body removal from the esophagus, stomach, duodenum, colon, or rectum.</li>
-          <li>Esophageal dilation for selected pediatric strictures, including strictures related to esophageal atresia, achalasia, and gastroesophageal reflux disease.</li>
-          <li>Management of esophageal varices, including band ligation or sclerotherapy when clinically indicated.</li>
-          <li>Biopsy from esophagus, stomach, and duodenum for celiac disease, eosinophilic esophagitis, Helicobacter pylori, and other pathology.</li>
-        </ul>
-        <h3>Enteral Access and Advanced Endoscopic Procedures</h3>
-        <ul>
-          <li>Percutaneous endoscopic gastrostomy placement for long-term enteral nutrition.</li>
-          <li>Implemented an endoscopic PEG program at Maternity and Children Hospital in Buraydah, Saudi Arabia, transitioning selected patients away from open surgical gastrostomy toward a less invasive endoscopic approach.</li>
-          <li>Percutaneous endoscopic cecostomy placement for selected children with severe constipation and fecal incontinence requiring antegrade continence enemas.</li>
-          <li>PEG tube pre-procedure, intra-procedural, and post-procedure care.</li>
-        </ul>
-        <h3>Liver Biopsy</h3>
-        <ul>
-          <li>Certified in performing percutaneous liver biopsy.</li>
-          <li>Experience with ultrasound-guided technique to optimize needle placement in real time.</li>
-          <li>Experience with Menghini needle suction technique.</li>
-          <li>Experience with Tru-Cut spring-loaded automated core sampling.</li>
-        </ul>
-        <h3>Motility and Functional Testing</h3>
-        <ul>
-          <li>Anorectal manometry: independent performance, interpretation, reporting, and clinical management based on findings.</li>
-          <li>Hydrogen and methane breath testing: independent performance, interpretation, and management of related conditions.</li>
-          <li>pH and dual pH-impedance studies: autonomous performance, interpretation, reporting, and treatment planning.</li>
-        </ul>
-        <h3>Capsule Endoscopy</h3>
-        <ul>
-          <li>Certified by Yale New Haven Children’s Hospital, Connecticut, USA, June 2018.</li>
-          <li>Experience performing capsule endoscopy, interpreting results, and integrating findings into pediatric gastrointestinal management.</li>
-          <li>Capable of performing the procedure, interpreting results, and treating conditions based on findings.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="professional-experience-and-appointments">
-      <h2>Professional Experience and Appointments</h2>
-      <div class="section-body">
-        <h3>WELL Health Medical Centres</h3>
-        <h3>Calgary, Alberta, Canada | Suite 183, 5005 Dalhousie Drive NW, Calgary, AB T3A 5R8 | Clinic phone: 403-202-8888</h3>
-        <div class="role-line"><span>Pediatrician and Pediatric Gastroenterologist</span><span class="date">April 2026 - Present</span></div>
-        <ul>
-          <li>Current Alberta-based community pediatric and pediatric gastroenterology practice.</li>
-          <li>Provides community-based pediatric and pediatric gastroenterology consultation in Alberta.</li>
-          <li>Clinical focus includes pediatric gastrointestinal complaints, complex constipation, reflux, abdominal pain, nutrition and feeding issues, inflammatory bowel disease triage/follow-up, and shared-care consultation.</li>
-          <li>Provides pediatric and pediatric gastroenterology consultation with emphasis on clear documentation, practical investigation planning, safety-netting, and shared-care communication.</li>
-          <li>Provides care within Canadian regulatory and documentation standards, including appropriate virtual-care workflows when applicable.</li>
-          <li>Uses structured consultation letters, diagnostic stewardship, family education, and safety-netting as core elements of clinical practice.</li>
-          <li>Limited virtual visits may be delivered under WELL/Tia workflows where applicable.</li>
-        </ul>
-        <h3>Avicenna Medical Inc - Al Farabi Gastroenterology &amp; Endoscopy Center, Diyala Branch</h3>
-        <h3>Diyala Health Ministry, Diyala, Iraq</h3>
-        <div class="role-line"><span>Pediatric Gastroenterology</span><span class="date">April 2025 – April 2026</span></div>
-        <ul>
-          <li>Provides pediatric gastroenterology consultation for infants, children, and adolescents with gastrointestinal, hepatobiliary, nutritional, and feeding-related disorders.</li>
-          <li>Pediatric gastroenterology consultation for children with gastrointestinal, hepatobiliary, nutritional, and feeding-related disorders.</li>
-          <li>Assesses complex and long-standing gastrointestinal presentations, including constipation, abdominal pain, chronic diarrhea, malabsorption, reflux, feeding difficulties, suspected inflammatory bowel disease, celiac disease, and liver disease.</li>
-          <li>Uses structured history-taking, careful documentation, differential diagnosis, rational investigation planning, treatment plans, follow-up recommendations, and escalation guidance.</li>
-          <li>Works within a shared-care model with local physicians and clinic teams, including telemedicine-based assessment and coordination of in-person review or procedures when clinically indicated.</li>
-          <li>Virtual and shared-care model with local clinic coordination.</li>
-          <li>Current practice location listed as Avicenna Medical Inc - Al Farabi Gastroenterology &amp; Endoscopy Center, Diyala Branch, Diyala Health Ministry, Diyala, Iraq.</li>
-        </ul>
-        <h3>Maternity &amp; Children Hospital, Buraydah - Al Qassim Health Cluster, Ministry of Health, Kingdom of Saudi Arabia</h3>
-        <h3>Buraydah, Al Qassim, Kingdom of Saudi Arabia</h3>
-        <div class="role-line"><span>Pediatric Gastroenterology</span><span class="date">February 2024 - February 2025</span></div>
-        <ul>
-          <li>Worked in the  Pediatric Gastroenterology section within a regional maternal and children’s hospital while also contributing to general pediatrics, emergency pediatrics, and neonatal/inpatient care.</li>
-          <li>Managed outpatient pediatric gastroenterology clinics, virtual clinics, endoscopy lists, and daycare infusion therapy.</li>
-          <li>Provided pediatric endoscopy services including diagnostic and therapeutic upper and lower endoscopy.</li>
-          <li>Helped implement an endoscopic PEG program, transitioning selected patients away from open surgical gastrostomy toward a less invasive endoscopic approach.</li>
-          <li>Participated in biologic infusion care for pediatric inflammatory bowel disease, including infliximab, adalimumab, vedolizumab, and iron infusion therapy as part of ongoing clinical care.</li>
-          <li>Led and supervised structured teaching activities for residents, registrars, interns and medical students.</li>
-          <li>Supervised Saudi Pediatric Board resident case forums and contributed to research and quality-improvement initiatives.</li>
-          <li>Provided pediatric gastroenterology consultation for complex gastrointestinal and hepatobiliary disorders.</li>
-          <li>Contributed to coverage in general pediatrics on demands.</li>
-        </ul>
-        <h3>Clinical Activities at Maternity &amp; Children Hospital</h3>
-        <ul>
-          <li>Outpatient pediatric gastroenterology clinics.</li>
-          <li>Virtual clinics.</li>
-          <li>Endoscopy list every Tuesday, historically listed as 7:00 am - 12:00 pm.</li>
-          <li>Daycare clinic for infusion therapy, historically listed as Monday and Wednesday, 7:00 am - 2:00 pm.</li>
-          <li>Administration and monitoring of biologic inflammatory bowel disease medications and elemental iron infusions as part of ongoing patient care.</li>
-          <li>Pediatric gastroenterology consultation for complex gastrointestinal and hepatobiliary disorders.</li>
-          <li>Coverage contributions to general pediatrics, emergency pediatrics, and NICU several days per week.</li>
-        </ul>
-        <h3>Teaching Activities at Maternity &amp; Children Hospital</h3>
-        <ul>
-          <li>Noon case-based teaching sessions on chronic diarrhea, malabsorption, cyclic vomiting syndrome, and neonatal cholestasis.</li>
-          <li>Half-day teaching activities including GI bleeding lecture on April 17, 2024 and GI MCQ session on May 8, 2024.</li>
-          <li>Created and supervised the “Qassim Peds Podcast Group.”</li>
-          <li>October 19, 2024 - Approach to the Yellow Baby.</li>
-          <li>October 22, 2024 - Approach to Chronic Diarrhea and Malabsorption Syndromes.</li>
-          <li>October 27, 2024 - Approach to the Puking Child / cyclic vomiting syndrome.</li>
-        </ul>
-        <h3>Saudi Pediatric Board Resident Case Forums Supervised</h3>
-        <ul>
-          <li>Magnet ingestion and button battery in the esophagus requiring urgent endoscopic removal.</li>
-          <li>Tracheoesophageal fistula secondary to button battery ingestion.</li>
-          <li>Lower gastrointestinal bleeding and juvenile polyposis syndromes.</li>
-          <li>Primary intestinal lymphangiectasia and cardiac hepatopathy.</li>
-          <li>Post-liver transplant follow-up and acute pancreatitis care.</li>
-          <li>Cholestasis and indirect hyperbilirubinemia in infancy.</li>
-          <li>PEG tube pre-procedure, intra-procedural, and post-procedure care.</li>
-          <li>Sexual abuse presenting as chronic functional abdominal pain and constipation.</li>
-          <li>Approach to refractory constipation in children.</li>
-          <li>Celiac disease - diagnostic approach and NASPGHAN / ESPGHAN guidelines.</li>
-          <li>Post-Kasai care and ERCP for choledocholithiasis in pediatrics.</li>
-          <li>Peptic ulcer disease in a child - full diagnostic and management approach.</li>
-        </ul>
-        <h3>Research, Quality Improvement and Community Involvement at Maternity &amp; Children Hospital</h3>
-        <ul>
-          <li>Use of unnecessary laboratory and imaging studies at MCH, 2019-2024, with goal of establishing a Saudi Choosing Wisely initiative.</li>
-          <li>Incidence and prevalence of iatrogenic hyponatremia in admitted children at MCH, aiming to establish local guidelines aligned with Canadian Pediatric Society recommendations.</li>
-          <li>Regional analysis of magnetic ingestion in children - Al-Qassim, Saudi Arabia, ongoing 2024.</li>
-          <li>Participation in Rukin Hayakum, a public educational initiative at MCH aimed at patient and family education.</li>
-          <li>Occasional involvement in local and national teaching forums.</li>
-          <li>Member, Qassim local chapter for Saudi Society of Pediatric Gastroenterology, Hepatology and Nutrition, Feb2024-Feb2025</li>
-        </ul>
-        <h3>Ibn Sina Pediatric Gastroenterology Clinic / Avicenna Medical Inc</h3>
-        <h3>Al Maghrib Street, Al Adhamyia, Baghdad, Iraq</h3>
-        <div class="role-line"><span>Pediatric Gastroenterology</span><span class="date">April 2022 - January 2024</span></div>
-        <ul>
-          <li>Provided pediatric and pediatric gastroenterology consultative care through a predominantly telemedicine/shared-care model.</li>
-          <li>Provided pediatric gastroenterology consultative and advisory work, predominantly remote/telemedicine.</li>
-          <li>Managed complex gastrointestinal, nutritional, and hepatobiliary cases in collaboration with local physicians and families.</li>
-          <li>Managed complex pediatric gastrointestinal disorders through detailed history, review of available records, investigation planning, family counselling, written consultation reports, and follow-up recommendations.</li>
-          <li>Developed detailed consultation letters, follow-up recommendations, investigation plans, and practical management pathways for children with chronic gastrointestinal symptoms.</li>
-          <li>Collaborated with local physicians and clinic team to support access to subspecialty care.</li>
-          <li>Worked to improve access to pediatric gastroenterology expertise in a setting where subspecialty access and patient financial constraints were significant practical barriers.</li>
-        </ul>
-        <h3>Seashell Medical Centre</h3>
-        <h3>330 Bronte Street South, Milton, Ontario, Canada</h3>
-        <div class="role-line"><span>Pediatrics and Pediatric Gastroenterology</span><span class="date">August 2016 - March 2022</span></div>
-        <ul>
-          <li>Provided community-based pediatric and pediatric gastroenterology consultation in Ontario.</li>
-          <li>Community pediatric and pediatric gastroenterology practice.</li>
-          <li>Assessed and managed pediatric gastrointestinal and nutritional conditions, including reflux, abdominal pain, constipation, feeding concerns, growth concerns, chronic diarrhea, celiac disease, suspected inflammatory bowel disease, and hepatobiliary presentations.</li>
-          <li>Assessment of pediatric gastrointestinal complaints including constipation, reflux, abdominal pain, chronic diarrhea, celiac disease, growth and nutrition concerns, hepatobiliary concerns, and suspected inflammatory bowel disease.</li>
-          <li>Maintained a broad pediatric practice while applying pediatric gastroenterology expertise in a community consultation model.</li>
-          <li>Coordinated investigations, referrals, follow-up plans, family counselling, and safety-netting within the outpatient setting.</li>
-        </ul>
-        <h3>Oakville Pediatric Gastroenterology Clinic</h3>
-        <h3>455 Trafalgar Road, Oakville, Ontario, Canada</h3>
-        <div class="role-line"><span>Pediatrics and Pediatric Gastroenterology</span><span class="date">March 2016 - August 2016</span></div>
-        <ul>
-          <li>Provided pediatric gastroenterology consultation in a community outpatient clinic setting.</li>
-          <li>Outpatient pediatric gastroenterology consultation.</li>
-          <li>Assessed children and adolescents with gastrointestinal, nutritional, growth, and hepatobiliary concerns.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="medical-education-and-postgraduate-training">
-      <h2>Medical Education and Postgraduate Training</h2>
-      <div class="section-body">
-        <h3>McMaster Children’s Hospital, McMaster University</h3>
-        <h3>1280 Main Street West, Hamilton, Ontario L8S 4K1, Canada</h3>
-        <div class="role-line"><span>Fellow, Pediatric Gastroenterology, Hepatology and Nutrition</span><span class="date">July 2013 - December 2015</span></div>
-        <ul>
-          <li>Completed fellowship training in pediatric gastroenterology, hepatology, and nutrition.</li>
-          <li>Participated in inpatient and outpatient pediatric gastroenterology care, endoscopy, consult services, multidisciplinary teaching, radiology rounds, pathology rounds, and academic rounds.</li>
-          <li>Developed expertise in inflammatory bowel disease, liver disease, nutrition, endoscopy, motility-related disorders, celiac disease, chronic diarrhea, malabsorption, gastrointestinal bleeding, and complex pediatric gastrointestinal presentations.</li>
-          <li>Participated in outpatient clinics, inpatient consults, procedures, multidisciplinary rounds, pathology rounds, radiology rounds, and academic teaching.</li>
-        </ul>
-        <h3>Children’s Hospital, Western University / London Health Sciences Centre</h3>
-        <h3>London Health Sciences Centre, London, Ontario, Canada</h3>
-        <div class="role-line"><span>Pediatric Resident</span><span class="date">July 2010 - June 2013</span></div>
-        <ul>
-          <li>Completed Canadian pediatric residency training.</li>
-          <li>Gained experience in general pediatrics, emergency pediatrics, inpatient pediatrics, neonatal care, pediatric subspecialties, and child-health advocacy.</li>
-          <li>General pediatrics, emergency pediatrics, inpatient pediatrics, neonatal care, subspecialty pediatrics, teaching, and academic presentations.</li>
-          <li>Developed foundational experience in newborn assessment, neonatal resuscitation, jaundice, hypoglycemia, feeding and weight-gain concerns, respiratory distress, sepsis evaluation, and escalation to higher-level neonatal care when clinically required.</li>
-          <li>Participated in clinical teaching, pediatric academic rounds, and resident education initiatives.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="education">
-      <h2>Education</h2>
-      <div class="section-body">
-        <ul>
-          <li>MBChB - Bachelor of Medicine and Bachelor of Surgery, Baghdad College of Medicine, University of Baghdad, Baghdad, Iraq, September 1995 - June 2002.</li>
-          <li>BSc (Hons), Diyala, Iraq, September 1991 - June 1994.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="additional-professional-experience-and-early-career-roles">
-      <h2>Additional Professional Experience and Early Career Roles</h2>
-      <div class="section-body">
-        <h3>Canadian Chiropractic Examining Board (CCEB)</h3>
-        <h3>1209 59 Avenue SE, Calgary, Alberta T2H 2M3, Canada</h3>
-        <div class="role-line"><span>Simulated Patient / Simulated Health Care Professional</span><span class="date">November 2008 - May 2010</span></div>
-        <h3>Pharmacy Examining Board of Canada (PEBC)</h3>
-        <h3>717 Church Street, Toronto, Ontario M4W 2M4, Canada</h3>
-        <div class="role-line"><span>Simulated Patient / Simulated Health Care Professional</span><span class="date">November 2009 - May 2010</span></div>
-        <h3>Aerospace &amp; Naval Medicine Department, Iraqi Surgeon General</h3>
-        <h3>Green International Zone, Baghdad, Iraq</h3>
-        <div class="role-line"><span>Deputy Chief</span><span class="date">March 2006 - October 2006</span></div>
-        <h3>School of Aerospace Medicine, Brooks Air Force Base</h3>
-        <h3>San Antonio, Texas, USA</h3>
-        <div class="role-line"><span>Iraqi Air Force Liaison</span><span class="date">June 2006 - October 2006</span></div>
-        <h3>New Al-Muthana Aerospace Clinic, Aerospace and Naval Medicine Department, Iraqi Surgeon General</h3>
-        <h3>Baghdad International Airport, Iraqi Air Force Camp, Iraq</h3>
-        <div class="role-line"><span>Commander</span><span class="date">March 2006 - June 2006</span></div>
-        <h3>Ministry of Health, Office of Special Operation</h3>
-        <h3>Baghdad, Iraq</h3>
-        <div class="role-line"><span>Senior Registrar Medical Doctor</span><span class="date">January 2005 - February 2005</span></div>
-        <h3>Rusafa Medical Directorate, Ministry of Health</h3>
-        <h3>Baghdad, Iraq</h3>
-        <div class="role-line"><span>Rotating Medical Intern / Chief Resident</span><span class="date">October 2002 - February 2005</span></div>
-      </div>
-    </section>
-    <section id="complete-certifications-and-examinations">
-      <h2>Complete Certifications and Examinations</h2>
-      <div class="section-body">
-        <ul>
-          <li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatrics - June 2023.</li>
-          <li>Fellow of the Royal College of Physicians and Surgeons of Canada, Pediatric Gastroenterology - November 2025.</li>
-          <li>Member, Royal College of Paediatrics and Child Health - MRCPCH-UK Final Certification Exam Candidate.</li>
-          <li>Video Capsule Endoscopy Certification - Yale New Haven Children’s Hospital, Connecticut, USA - June 2018.</li>
-          <li>Licentiate of the Medical Council of Canada.</li>
-          <li>MINC: CAMD-0078-9005.</li>
-          <li>EICS number: E283499.</li>
-          <li>Medical Council of Canada Qualifying Examination Part II - Hamilton, Ontario - May 2009.</li>
-          <li>Medical Council of Canada Qualifying Examination Part I - Hamilton, Ontario - November 2008.</li>
-          <li>Medical Council of Canada Evaluating Examination - Toronto, Ontario - January 2008.</li>
-          <li>IMG Program Assessment, CEHPEA-CE1, currently NAC OSCE - Toronto, Ontario - August 2009.</li>
-          <li>Diploma, School of Aerospace Medicine - U.S. Air Force School of Aerospace Medicine, Brooks Air Force Base, San Antonio, Texas, USA - June 2006 - October 2006.</li>
-          <li>Diploma, English Language - Defense Language Institute Foreign Language Center, Lackland Air Force Base, San Antonio, Texas, USA - June 2006 - October 2006.</li>
-          <li>Liver Biopsy Certification - 2024.</li>
-          <li>Neonatal Resuscitation Program, University of Western Ontario, London, Ontario - 2010-2013.</li>
-          <li>Pediatric Advanced Life Support, University of Western Ontario, London, Ontario - 2010-2013.</li>
-          <li>Advanced Pediatric Life Support, University of Western Ontario, London, Ontario - 2010-2013.</li>
-          <li>Advanced Cardiac Life Support, CEHPEA, Toronto, Ontario - May 2010.</li>
-          <li>Orientation to the Canadian Health Care System, Culture, and Context for International Pharmacists - Leslie Dan Faculty of Pharmacy, University of Toronto, Toronto, Ontario - January 2009 - March 2009.</li>
-          <li>Crucial Conversations: Teamwork and Communication Training Program - Schulich School of Medicine &amp; Dentistry, University of Western Ontario - March 2011.</li>
-          <li>Research Certificate: Clinical Trial Methodology in Practice - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
-          <li>Research Certificate: Fundamentals of Health Research &amp; Evaluation - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
-          <li>Research Certificate: Methodology of Clinical Trial Research Coordination - Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario - April 2009 - December 2009.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="publications-abstracts-and-research-output">
-      <h2>Publications, Abstracts and Research Output</h2>
-      <div class="section-body">
-        <h3>Peer-Reviewed Publications</h3>
-        <ul>
-          <li>Alrashidi, S. H., Al-Harbi, F., AlObailan, Y. I., Alkhalifah, Y. S., Alghasham, Y. A., Hussein, M., &amp; Alabood, M. A. (2025). Tracheoesophageal fistula with esophageal atresia in the Qassim region: Epidemiology, clinical characteristics, and outcomes - a retrospective study. Georgian Medical News, (10), 176-182.</li>
-          <li>Pediatric segmental intestinal lymphangiectasia. Case report and literature review. Journal of Pediatric Gastroenterology and Nutrition, 2018.</li>
-          <li>Pediatric duodenal Dieulafoy’s lesion: A serious but rare cause of upper gastrointestinal bleeding. Journal of Clinical Gastroenterology and Hepatology, November 9, 2017.</li>
-          <li>Tuberculous abdominal cocoon in a twelve-year-old girl. Case report and literature review. The Lancet Infectious Diseases, 2015.</li>
-        </ul>
-        <h3>Submitted / In Progress</h3>
-        <ul>
-          <li>Ulcerative colitis and Budd-Chiari syndrome association in a child. Manuscript submitted to the Saudi Journal of Gastroenterology, 2024.</li>
-          <li>Regional analysis of magnetic ingestion in children: Insights from Al-Qassim, Saudi Arabia. Retrospective study, 2024-ongoing.</li>
-          <li>Use of unnecessary laboratory and imaging studies at Maternity and Children Hospital, 2019-2024, as a Choosing Wisely initiative.</li>
-          <li>Incidence and prevalence of iatrogenic hyponatremia in admitted children at Maternity and Children Hospital.</li>
-        </ul>
-        <h3>Abstracts / Presentations</h3>
-        <ul>
-          <li>Is it really leukemia? Case report and literature review. Presented at Canadian Pediatric Society meeting, 2013.</li>
-          <li>Congenital myotonic dystrophy and chylothorax - a common disease with a rarely reported association. Presented at Canadian Pediatric Society meeting, 2012.</li>
-          <li>Worsening headaches after a concussion: Expected or unusual? Case report of newly diagnosed hydrocephalus post-concussion with literature review. Presented at Canadian Pediatric Society meeting, 2011.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="teaching-supervision-and-academic-leadership">
-      <h2>Teaching, Supervision and Academic Leadership</h2>
-      <div class="section-body">
-        <ul>
-          <li>Designed and delivered structured education for pediatric residents, fellows, registrars, interns and medical students.</li>
-          <li>Conducted case-based teaching sessions on chronic diarrhea, malabsorption, cyclic vomiting syndrome, neonatal cholestasis, gastrointestinal bleeding, celiac disease, refractory constipation, and other core pediatric gastroenterology topics.</li>
-          <li>Established, scripted, supervised, and created the “Qassim Peds Podcast Group” for residents, registrars, interns, and medical students.</li>
-          <li>Supervised Saudi Pediatric Board resident case forums covering magnet ingestion, button battery complications, juvenile polyposis, intestinal lymphangiectasia, cardiac hepatopathy, post-liver transplant care, acute pancreatitis, cholestasis, PEG care, sexual abuse presenting as abdominal pain/constipation, refractory constipation, celiac disease, post-Kasai care, ERCP for choledocholithiasis, and peptic ulcer disease.</li>
-          <li>Recipient, Best Teacher Award, University of Western Ontario, London, Ontario, Canada, 2013.</li>
-          <li>Established curriculum for Residents as Teachers of Publics / Residents as Teachers program during pediatric residency training.</li>
-          <li>Educator / Teacher, Medical Students Teaching Series, Clinical Teaching Units, University of Western Ontario, 2011-2013.</li>
-          <li>Pre-Clerkship Year II Clinical Skills Mentor, University of Western Ontario, July 2012.</li>
-          <li>Established curriculum for an International Medical Graduates bridging program, Partner Performance and Associate Organization, Hamilton, Ontario, 2008-2010.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="quality-improvement-and-systems-work">
-      <h2>Quality Improvement and Systems Work</h2>
-      <div class="section-body">
-        <ul>
-          <li>Supervised or contributed to retrospective quality-improvement/research projects at Maternity and Children Hospital.</li>
-          <li>Use of unnecessary laboratory and imaging studies at MCH, 2019-2024, with the goal of developing Choosing Wisely-aligned practice improvements.</li>
-          <li>Incidence and prevalence of iatrogenic hyponatremia in admitted children, aiming to inform local guidelines aligned with pediatric best practice.</li>
-          <li>Regional analysis of magnetic ingestion in children in Al-Qassim, Saudi Arabia.</li>
-          <li>Implemented a pediatric endoscopic PEG pathway at Maternity and Children Hospital, Buraydah.</li>
-          <li>Developed structured case-based learning and podcast-style teaching to support pediatric trainees and multidisciplinary education.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="professional-development-and-academic-activities">
-      <h2>Professional Development and Academic Activities</h2>
-      <div class="section-body">
-        <h3>2002-2005 - Early Clinical and Academic Activities, Iraq</h3>
-        <h3>Rusafa Health Centre, Ministry of Health, Baghdad, Iraq:</h3>
-        <ul>
-          <li>Type 1 Diabetes Mellitus - clinical review, Ibn Baladi Hospital.</li>
-          <li>Neonatal Sepsis - local incidence rate study, Ibn Baladi Hospital.</li>
-          <li>Epstein-Barr Virus - case presentation and literature review, Al-Jwader Hospital.</li>
-        </ul>
-        <h3>2005-2006 - Aerospace Medicine and Military-Related Academic Work, USA</h3>
-        <h3>Defense Language Institute / School of Aerospace Medicine, San Antonio, Texas:</h3>
-        <ul>
-          <li>Alcohol and the Military Aviator.</li>
-          <li>New Iraqi Aerospace Medicine - From Old to New Formulation and Transition: Successes and Limitations.</li>
-          <li>Medications and the Military Aviator.</li>
-        </ul>
-        <h3>2009 - Research and Academic Skills, McMaster University</h3>
-        <h3>Michael G. DeGroote School of Medicine, McMaster University, Hamilton, Ontario:</h3>
-        <ul>
-          <li>Ultrasound Use in Simple Sacral Dimple - literature search and study design, HRM-721 proposed research project.</li>
-          <li>Conflict of Interest in Clinical Trials - Tri-Council Policy Statement, Chapter 7.</li>
-        </ul>
-        <h3>2010-2013 - Pediatric Academic Rounds, Western University</h3>
-        <h3>2010 - London Health Sciences Centre / University of Western Ontario</h3>
-        <ul>
-          <li>Syncope in Children - May 2010.</li>
-          <li>Hematuria in Children - case presentation and literature review - August 2010.</li>
-          <li>Increased Energy Intake for Preterm Infants with or Developing Bronchopulmonary Dysplasia / Chronic Lung Disease, Lai NM, 2011 - September 2010.</li>
-          <li>Neonatal Intraventricular Hemorrhage - September 2010.</li>
-          <li>Resuscitation of Newborn Infants with 21% or 100% Oxygen - review and meta-analysis, Ola Didrik Saugstad, 2008 - October 2010.</li>
-        </ul>
-        <h3>2011 - London Health Sciences Centre / University of Western Ontario</h3>
-        <ul>
-          <li>Transfusion of Leukocyte-Depleted Red Blood Cells Is Not a Risk Factor for New Onset or Progressive Multiple Organ Dysfunction in Critically Ill Children, Judith van der Wal, 2011 - October 2011.</li>
-        </ul>
-        <h3>2012 - London Health Sciences Centre / University of Western Ontario</h3>
-        <ul>
-          <li>Guideline for the Evaluation of Cholestatic Jaundice in Infants - Recommendations of NASPGHAN - February 2012.</li>
-        </ul>
-        <h3>2013 - Hamilton Health Sciences / McMaster University</h3>
-        <ul>
-          <li>Segmental Intestinal Lymphangiectasia - rare case presentation with literature review - August 2013.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="conferences-and-major-meetings">
-      <h2>Conferences and Major Meetings</h2>
-      <div class="section-body">
-        <h3>January 2015</h3>
-        <ul>
-          <li>Advanced Endoscopy Course, Hamilton General Hospital.</li>
-          <li>Seventh Canadian GI Fellows Program in IBD, Grand Hotel and Suites, Toronto, Ontario.</li>
-        </ul>
-        <h3>February 27 - March 2, 2015</h3>
-        <ul>
-          <li>Canadian Digestive Diseases Week and the Annual CASL Winter Meeting, Fairmont Banff Springs, Banff, Alberta.</li>
-        </ul>
-        <h3>February 2014</h3>
-        <ul>
-          <li>Canadian Digestive Diseases Week and the Annual CASL Winter Meeting, Toronto, Ontario.</li>
-        </ul>
-        <h3>January - December 2014, McMaster Children’s Hospital, McMaster University, Hamilton, Ontario</h3>
-        <ul>
-          <li>Pediatric Gastroenterology Pathology Rounds.</li>
-          <li>Pediatric Gastroenterology Rounds.</li>
-          <li>Pediatric Gastroenterology Radiology Rounds.</li>
-        </ul>
-        <h3>October 2014</h3>
-        <ul>
-          <li>High-Resolution Manometry - Esophageal Function, St. Joseph’s Healthcare, Hamilton, Ontario.</li>
-          <li>Very Early Onset Inflammatory Bowel Disease, Hospital for Sick Children, Toronto, Ontario.</li>
-        </ul>
-        <h3>2014</h3>
-        <ul>
-          <li>Steinberg’s 2014 Board Review in Gastroenterology, Arlington, Virginia, USA.</li>
-          <li>Translational Approaches to Inflammatory Liver Injury, University of Calgary Liver Unit, Calgary, Alberta.</li>
-        </ul>
-        <h3>August 2014</h3>
-        <ul>
-          <li>Mount Sinai Intensive Review in Gastroenterology and Hepatology, Icahn School of Medicine at Mount Sinai, New York, USA.</li>
-          <li>20th Annual Pediatric Board Review, Cleveland Clinic Educational Foundation, Cleveland, Ohio, USA.</li>
-        </ul>
-        <h3>July 31 - August 2013</h3>
-        <ul>
-          <li>Boston MedStudy Intensive Pediatric Board Review, Boston, Texas, USA.</li>
-        </ul>
-        <h3>February 2013, 2014, 2015, 2016, 2018, 2022</h3>
-        <ul>
-          <li>McMaster Intensive Pediatric Board Review, Hamilton, Ontario.</li>
-        </ul>
-        <h3>NASPGHAN Annual Meeting and Postgraduate Course</h3>
-        <ul>
-          <li>2013, 2014, 2015, 2017, 2022, 2023.</li>
-        </ul>
-        <h3>Canadian Pediatric Society Conference</h3>
-        <ul>
-          <li>2012, 2013, 2015, 2017, 2023.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="awards-and-achievements">
-      <h2>Awards and Achievements</h2>
-      <div class="section-body">
-        <ul>
-          <li>Best Teacher Award, University of Western Ontario, London, Ontario, Canada - 2013.</li>
-          <li>Educator / Teacher, Medical Students Teaching Series, Clinical Teaching Units, University of Western Ontario - 2011-2013.</li>
-          <li>Pre-Clerkship Year II Clinical Skills Mentor, University of Western Ontario - July 2012.</li>
-          <li>Distinguished Physician Award, Ibn Baladi Hospital, Baghdad, Iraq - 2003-2004.</li>
-          <li>Best Doctor of the Year, Ibn Baladi Hospital, Baghdad, Iraq - 2003-2004.</li>
-          <li>Played a managerial role in keeping Ibn Baladi Hospital operational during the 2003 war with only three physicians, limited healthcare professionals, and scarce resources.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="leadership-committee-and-community-roles">
-      <h2>Leadership, Committee and Community Roles</h2>
-      <div class="section-body">
-        <h3>Aerospace and Naval Medicine Division, Iraqi Surgeon General, Ministry of Defense, Baghdad, Iraq</h3>
-        <ul>
-          <li>Division Deputy Chief - 2005-2006.</li>
-          <li>Committee Chief: Pilots and Aircrews Selection - 2005-2006.</li>
-          <li>Committee Chief: Food Safety Inspection - 2005-2006.</li>
-          <li>Committee Chief: Public Health Committee - 2005-2006.</li>
-          <li>Clinic Chief, Al-Muthana Air Base - 2005-2006.</li>
-        </ul>
-        <h3>Ibn Al-Balady Hospital, Baghdad, Iraq</h3>
-        <ul>
-          <li>Salary Distribution Committee - Member, 2003-2005.</li>
-          <li>Food Safety Inspection Committee - Member, 2003-2005.</li>
-          <li>Iraqi Medical Union of Excellent Employees - Member, 2003-2005.</li>
-          <li>Chief Resident - 2003-2005.</li>
-          <li>Pediatrics Hospital Medical Director - 2003-2004.</li>
-        </ul>
-        <h3>Other Academic / Professional Roles</h3>
-        <ul>
-          <li>Iraqi Medical Association - Member, 2003-present.</li>
-          <li>Pediatrics CaRMS Interview Committee - Member, University of Western Ontario, London, Ontario - 2011-2012.</li>
-          <li>Delegate, American Academy of Pediatrics, Pediatrics Program, University of Western Ontario, London, Ontario - 2011-2012.</li>
-          <li>Residents Wellbeing Committee - Member, Pediatric Residency Program, University of Western Ontario, London, Ontario - 2011-2013.</li>
-          <li>Residents as Teachers of Public Committee - Core Leader, Pediatric Residency Program, University of Western Ontario - 2011-2013.</li>
-          <li>Settlement and Integration Services Organization - Member, Hamilton, Ontario - 2008-2012.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="selected-professional-memberships-and-affiliations">
-      <h2>Selected Professional Memberships and Affiliations</h2>
-      <div class="section-body">
-        <ul>
-          <li>Canadian Medical Protective Association - Member, 2010-present.</li>
-          <li>Canadian Pediatric Society - Member, 2010-present.</li>
-          <li>American Academy of Pediatrics - Member, 2010-present.</li>
-          <li>Ontario Medical Association - Member, 2010-present.</li>
-          <li>Canadian Medical Association - Member, 2013-present.</li>
-          <li>Canadian Association of Gastroenterology - Member, 2013-present.</li>
-          <li>North American Society for Pediatric Gastroenterology, Hepatology and Nutrition - Member, 2013-present.</li>
-          <li>Canadian Iraqi Medical Society - Member, 2010-present.</li>
-          <li>Iraqi Medical Association of North America online group - Founder, 2012-present.</li>
-          <li>Iraqi Medical Association - Member, 2003-present.</li>
-          <li>Qassim local chapter, Saudi Society of Pediatric Gastroenterology, Hepatology and Nutrition - Member, February 2024-2025</li>
-        </ul>
-      </div>
-    </section>
-    <section id="languages">
-      <h2>Languages</h2>
-      <div class="section-body">
-        <ul>
-          <li>Arabic - Fluent.</li>
-          <li>English - Fluent.</li>
-          <li>Turkish - Intermediate.</li>
-        </ul>
-      </div>
-    </section>
-    <section id="references">
-      <h2>References</h2>
-      <div class="section-body">
-        <p>Detailed references and/or reference letters available upon request.</p>
-      </div>
-    </section>
     </main>
   </div>
 </body>
